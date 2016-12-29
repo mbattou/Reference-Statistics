@@ -11,7 +11,7 @@ use App\Post; //using the post model
 class PagesController extends Controller{
     public function getIndex(){
         $posts = Post::all();
-        //show the data  
+        //show the data here
         return view('welcome')->withPosts($posts);//passing post table data to view
       //return view('welcome', ['posts'=> $posts]);
     }
