@@ -6,20 +6,29 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use App\Post; //using the post model
+//new imports
+use App\Post; //call the Post model
+use App\Location; //call the Location Model
+use Illuminate\Http\Request;//using Http request
 
 class PagesController extends Controller{
+/*
+*Get Functions
+*/       
     public function getIndex(){
         $posts = Post::all();
-        //show the data here
         return view('welcome')->withPosts($posts);//passing post table data to view
-      //return view('welcome', ['posts'=> $posts]);
+      //return view('welcome', ['posts'=> $posts]);//another way to pass an aray of json data
     }
     public function getOndesk(){
-        return view('ondesk');
+    //load the drop down from the DB
+        $locations = Location::all();
+        return view('ondesk')->withLocations($locations);
     }
     public function getOffdesk(){
-        return view('offdesk');
+    //load the drop down from the DB
+        $locations = Location::all();
+        return view('offdesk')->withLocations($locations);
     }
     public function getReport(){
         return view('report');
@@ -30,7 +39,6 @@ class PagesController extends Controller{
         $data = [];
         $data['email'] = $email;
         $data['admin'] = $admin;
-        //return view('contact')->withEmail($email);
         return view('contact')->withData($data);
     }
     public function getAbout(){
@@ -40,6 +48,49 @@ class PagesController extends Controller{
         return view('demo');
     }
     public function getDash(){
+      //  return view('dash');
         return view('dash');
+    }
+    public function getData(){
+        return view('post');
+    }
+    public function getSample(){
+        //a sample a statistical view
+        return view('sample');
+    }
+    public function getTest(){
+        return view('test');
+        //return response('test')->cookie($cookie);
+    }
+/*
+*Post Functions
+*/    
+    public function store(Request $request){
+        //return $request->all();
+        $data = new Post;
+        $data->category = $request['category'];
+       // $data->subcategory = $request['subcategory']; //for a later use, not neede for current requirements
+        $data->location = $request['location'];
+        $data->code = $request['code'];
+        $data->save();
+        //return $request['category']."|".$request['location'];
+        return 'Data saved!!';
+    }
+    public function setCookie(Request $request){
+        $name = 'LocationCookie';
+        $value = $request['location'];
+        $life = 60; 
+        $cookie = cookie($name,$value,$life);
+        return response()->view('gloup')->withCookie($cookie);
+    }
+/*
+*Other functions
+*/    
+    public function clearCookie(){
+        $name = 'LocationCookie';
+        $value = 'NuLL';//should be replaced
+        $life = 0;
+        $cookie = cookie($name,$value,$life);
+        return response('Cookie cleared!!')->withCookie($cookie);
     }
 }

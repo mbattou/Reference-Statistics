@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Subcat extends Model
 {
     //declare the table in model
-    protected $table = 'posts';//not needed
+    protected $table = 'subcats';//not needed
 }

@@ -60,6 +60,7 @@ This is the main page that will contain the common layout of the application
                 <li><a href="/demo">Demo</a></li>
                 <li role="separator" class="divider">Stats Dashboard</li>
                 <li><a href="/dash">Stats Dash</a></li>
+                <li><a href="/sample">Sample Dashboard</a></li>
               </ul>
             </li>
           </ul>
@@ -80,6 +81,8 @@ This is the main page that will contain the common layout of the application
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
 <!-- Footer -->
 <footer class="container-fluid text-center">

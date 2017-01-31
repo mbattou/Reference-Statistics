@@ -15,12 +15,14 @@ class PostsTableSeeder extends Seeder
         DB::table('posts')->delete();
         //insert into the posts table
         DB::table('posts')->insert([
-            'category' => str_random(10),
-            'location' => str_random(3),
+            'category' => 1,
+            'location' => 1,
+            'code'=>1,
         ]);
         DB::table('posts')->insert([
-            'category' => str_random(10),
-            'location' => str_random(3),
+            'category' => 2,
+            'location' => 2,
+            'code'=>2,
         ]);
     }
 }

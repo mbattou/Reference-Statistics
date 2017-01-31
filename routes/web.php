@@ -11,11 +11,20 @@
 |
 */
 
-Route::get('/', 'PagesController@getIndex');
-Route::get('/ondesk', 'PagesController@getOndesk');
-Route::get('/offdesk', 'PagesController@getOffdesk');
-Route::get('/report', 'PagesController@getReport');
-Route::get('/contact', 'PagesController@getContact');
-Route::get('/about', 'PagesController@getAbout');
-Route::get('/demo', 'PagesController@getDemo');
-Route::get('/dash', 'PagesController@getDash');
+//GET
+Route::get('/',         'PagesController@getIndex');
+Route::get('/ondesk',   'PagesController@getOndesk');
+Route::get('/offdesk',  'PagesController@getOffdesk');
+Route::get('/report',   'PagesController@getReport');
+Route::get('/contact',  'PagesController@getContact');
+Route::get('/about',    'PagesController@getAbout');
+Route::get('/demo',     'PagesController@getDemo');
+Route::get('/dash',     'PagesController@getDash');
+Route::get('/store',    'PagesController@getData');
+Route::get('/sample',   'PagesController@getSample');
+ROUTE::get('/clear',    'PagesController@clearCookie');
+//POST
+Route::post('/store', 'PagesController@store');//store: insert into DB
+Route::post('/setCookie', 'PagesController@setCookie');//setCookie: sets the cookie
+//testing date time picker
+Route::get('/test', 'PagesController@getTest');

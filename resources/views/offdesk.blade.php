@@ -2,79 +2,96 @@
 @section('title', 'Off Desk')
 @section('content')
 
-<h1>Off-Desk</h1>
-<p>Please fill up the form!</p>
+<h1>Off-Desk Form</h1>
+<div class="col-md-7">
 <hr>
-
- <div class="col-md-5">
-<form>
+<h3>Please select your location</h3>
+<hr>
+ <form>
 <div class="form-group row">
-  <label for="example-text-input" class="col-xs-2 col-form-label">Text</label>
-  <div class="col-xs-10">
-    <input class="form-control" type="text" value="" id="example-text-input">
+  <label for="location-input" class="col-xs-2 col-form-label">Location</label>
+  <div class="col-xs-5">
+    <select class="form-control" id="location-input">
+         @for ($i=0; $i<count($locations); $i++)
+         <option>{{ $locations[$i]['locationtag'] }}</option>
+         @endfor
+    </select>
   </div>
 </div>
 <div class="form-group row">
-  <label for="example-email-input" class="col-xs-2 col-form-label">Location</label>
-  <div class="col-xs-10">
-    <input class="form-control" type="email" value="" id="example-email-input">
+  <label for="participant-input" class="col-xs-2 col-form-label">Organizers</label>
+  <div class="col-xs-5">
+    <input class="form-control" type="text" value="" id="participant-input">
   </div>
 </div>
 <div class="form-group row">
-  <label for="example-url-input" class="col-xs-2 col-form-label">Counts</label>
-  <div class="col-xs-10">
-    <input class="form-control" type="url" value="" id="example-url-input">
+  <label for="input-a" class="col-xs-2 col-form-label">Number of "A"</label>
+  <div class="col-xs-5">
+    <input class="form-control" type="number" value="" id="input-a">
+  </div>
+  </div>
+  <div class="form-group row">
+  <label for="input-b" class="col-xs-2 col-form-label">Number of "B"</label>
+  <div class="col-xs-5">
+    <input class="form-control" type="number" value="" id="input-b">
+  </div>
+  </div>
+  <div class="form-group row">
+  <label for="input-c" class="col-xs-2 col-form-label">Number of "C"</label>
+  <div class="col-xs-5">
+    <input class="form-control" type="number" value="" id="input-c">
+  </div>
+</div>
+<hr>
+<h3>Presentations - Training - Courses</h3>
+<hr>
+<div class="form-group row">
+  <label for="number-presentation-input" class="col-xs-2 col-form-label">Number of presentations</label>
+  <div class="col-xs-5">
+    <input class="form-control" type="number" value="" id="number-presentation-input">
   </div>
 </div>
 <div class="form-group row">
-  <label for="example-tel-input" class="col-xs-2 col-form-label">Telephone</label>
-  <div class="col-xs-10">
-    <input class="form-control" type="tel" value="" id="example-tel-input">
+  <label for="number-participant-input" class="col-xs-2 col-form-label">Number of participants</label>
+  <div class="col-xs-5">
+    <input class="form-control" type="number" value="" id="number-participant-input">
   </div>
 </div>
 <div class="form-group row">
-  <label for="example-password-input" class="col-xs-2 col-form-label">Password</label>
-  <div class="col-xs-10">
-    <input class="form-control" type="password" value="" id="example-password-input">
+  <label for="date-input" class="col-xs-2 col-form-label">Date</label>
+  <div class="col-xs-5">
+    <input class="form-control" type="date" value="today" id="date-input">
   </div>
 </div>
-<div class="form-group row">
-  <label for="example-number-input" class="col-xs-2 col-form-label">Number</label>
-  <div class="col-xs-10">
-    <input class="form-control" type="number" value="" id="example-number-input">
-  </div>
-</div>
-<div class="form-group row">
-  <label for="example-datetime-local-input" class="col-xs-2 col-form-label">Date and time</label>
-  <div class="col-xs-10">
-    <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
-  </div>
-</div>
-<div class="form-group row">
-  <label for="example-date-input" class="col-xs-2 col-form-label">Date</label>
-  <div class="col-xs-10">
-    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-  </div>
-</div>
-<div class="form-group row">
-  <label for="example-month-input" class="col-xs-2 col-form-label">Month</label>
-  <div class="col-xs-10">
-    <input class="form-control" type="month" value="2011-08" id="example-month-input">
-  </div>
-</div>
-<div class="form-group row">
-  <label for="example-week-input" class="col-xs-2 col-form-label">Week</label>
-  <div class="col-xs-10">
-    <input class="form-control" type="week" value="2011-W33" id="example-week-input">
-  </div>
-</div>
-<div class="form-group row">
-  <label for="example-time-input" class="col-xs-2 col-form-label">Time</label>
-  <div class="col-xs-10">
-    <input class="form-control" type="time" value="13:45:00" id="example-time-input">
-  </div>
-</div>
+    <div class="form-group row">
+      <label class="col-xs-2 col-form-label" data-placement="left" data-align="top" data-autoclose="true">Duration</label>
+      <div class="col-xs-5">
+       <div class="input-group clockpicker">
+        <div class="input-group-addon">
+         <i class="glyphicon glyphicon-time"></i>
+        </div>
+        <input class="form-control" type="text" value="01:30"  id="duration"/>
+       </div>
+      </div>
+     </div>
   <button type="button" class="btn btn-primary btn-lg">Submit</button>
-</form>
+ </form>
 </div>
+
+<!-- External Calls -->
+<!--  jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<!-- Bootstrap Clock Picker -->
+<link rel="stylesheet" href="https://weareoutman.github.io/clockpicker/dist/bootstrap-clockpicker.min.css"/>
+<script src="https://weareoutman.github.io/clockpicker/dist/bootstrap-clockpicker.min.js"></script>
+<!-- JS call Clock Picker -->
+<script>
+    var clockpicker = $('.clockpicker').clockpicker({
+      	placement: 'top',
+	      align: 'left',
+	      donetext: 'OK',
+        'default': 'now'
+}).find('input');
+</script>
+<!-- END JS -->
 @endsection

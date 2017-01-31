@@ -14,10 +14,18 @@ class CreatePostsTable extends Migration
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('category');
-            $table->string('location');
-            $table->timestamps();
+            $table->increments('id');                                   //PK
+            $table->integer('category')->unsigned()->unsigned();        //FK
+            $table->integer('subcategory')->nullable()->unsigned();     //FK
+            $table->integer('location')->unsigned();                    //FK
+            $table->integer('code')->nullable()->unsigned();            //FK, check if it should be nullable
+            $table->timestamps();                                       //created_at and updated_at
+                    
+            //FK Constraints:
+            //$table->foreign('category')->references('id')->on('cats');
+            //$table->foreign('subcategory')->references('id')->on('subcats');
+            //$table->foreign('location')->references('id')->on('locations');
+            //$table->foreign('code')->references('id')->on('codes');
         });
     }
 
