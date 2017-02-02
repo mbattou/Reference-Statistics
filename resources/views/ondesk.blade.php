@@ -17,5 +17,5 @@
 <hr>
 </div><!-- End Div from col-md-8 class -->
 @endif
-<!-- end of check if cookie is set or not -->
+<!-- end of check if cookie is set or noting -->
 @endsection
