@@ -67,22 +67,26 @@ class PagesController extends Controller{
         $name = 'LocationCookie';
         $value = $request -> cookie($name);
         $data = new Post;
-        $data->category = $request['category'];
+        $categoryID = $request->input('categoryID');
+        $data->category = $request->input('categoryID');
        // $data->subcategory = $request['subcategory']; //for a later use, not neede for current requirements
        // $data->location = $request['location'];
         $data->location = $value;
-        $data->code = $request['code'];
+        //$data->code = $request['code'];
+        if($value == null || $categoryID == null){
+            return view('warning');
+        }else {
         $data->save();
-        //return $request['category']."|".$request['location'];
-        return 'Data saved!!';
+        }
+        return view ('ondesk');
     }
     public function setCookie(Request $request){
         $name = 'LocationCookie';
         //if you are getting the value from input box simply use: $value = $request['location'] where location is the name of the input field
-        $value = $request->input('locationID');
-        $life = 60; 
+        $value = $request->input('locationID');//getting the selected value from the dropdown menu
+        $life = 60;//to be reviewded 
         $cookie = cookie($name,$value,$life);
-        return response()->view('gloup')->withCookie($cookie);
+        return response()->view('alert')->withCookie($cookie);
     }
 /*
 *Other functions
