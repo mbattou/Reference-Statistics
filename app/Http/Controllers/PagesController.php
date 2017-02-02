@@ -17,18 +17,15 @@ class PagesController extends Controller{
 */       
     public function getIndex(){
         $posts = Post::all();
-        return view('welcome')->withPosts($posts);//passing post table data to view
+        $locations = Location::all();
+        return view('welcome')->withPosts($posts)->withLocations($locations);
       //return view('welcome', ['posts'=> $posts]);//another way to pass an aray of json data
     }
     public function getOndesk(){
-    //load the drop down from the DB
-        $locations = Location::all();
-        return view('ondesk')->withLocations($locations);
+        return view('ondesk');
     }
     public function getOffdesk(){
-    //load the drop down from the DB
-        $locations = Location::all();
-        return view('offdesk')->withLocations($locations);
+        return view('offdesk');
     }
     public function getReport(){
         return view('report');
@@ -67,10 +64,13 @@ class PagesController extends Controller{
 */    
     public function store(Request $request){
         //return $request->all();
+        $name = 'LocationCookie';
+        $value = $request -> cookie($name);
         $data = new Post;
         $data->category = $request['category'];
        // $data->subcategory = $request['subcategory']; //for a later use, not neede for current requirements
-        $data->location = $request['location'];
+       // $data->location = $request['location'];
+        $data->location = $value;
         $data->code = $request['code'];
         $data->save();
         //return $request['category']."|".$request['location'];
@@ -78,7 +78,8 @@ class PagesController extends Controller{
     }
     public function setCookie(Request $request){
         $name = 'LocationCookie';
-        $value = $request['location'];
+        //if you are getting the value from input box simply use: $value = $request['location'] where location is the name of the input field
+        $value = $request->input('locationID');
         $life = 60; 
         $cookie = cookie($name,$value,$life);
         return response()->view('gloup')->withCookie($cookie);

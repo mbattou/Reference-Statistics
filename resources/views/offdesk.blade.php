@@ -3,21 +3,14 @@
 @section('content')
 
 <h1>Off-Desk Form</h1>
+@if(app('request')->cookie('LocationCookie') == null)
+  @include('no-location')
+@else
 <div class="col-md-7">
 <hr>
-<h3>Please select your location</h3>
+<h3>Please fill the form</h3>
 <hr>
  <form>
-<div class="form-group row">
-  <label for="location-input" class="col-xs-2 col-form-label">Location</label>
-  <div class="col-xs-5">
-    <select class="form-control" id="location-input">
-         @for ($i=0; $i<count($locations); $i++)
-         <option>{{ $locations[$i]['locationtag'] }}</option>
-         @endfor
-    </select>
-  </div>
-</div>
 <div class="form-group row">
   <label for="participant-input" class="col-xs-2 col-form-label">Organizers</label>
   <div class="col-xs-5">
@@ -77,6 +70,7 @@
   <button type="button" class="btn btn-primary btn-lg">Submit</button>
  </form>
 </div>
+@endif
 
 <!-- External Calls -->
 <!--  jQuery -->

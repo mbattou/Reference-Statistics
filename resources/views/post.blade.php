@@ -8,10 +8,6 @@
         CategoryID:<input name="category" type="text">
     </label>
     <br/>
-    <label>
-        LocationID:<input name="location" type="text">
-    </label>
-    <br/>
         <label>
         CodeID:<input name="code" type="text">
     </label>

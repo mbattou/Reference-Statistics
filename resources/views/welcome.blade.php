@@ -12,17 +12,19 @@
         </div>
       </div>
       <!-- end of header .row -->
-
-      <div class="row">
-        <div class="col-md-8">
-          <div class="post">
-            <h3>Generate a report?</h3>
-            <p>Please, use the botton to go to the report page</p>
-            <p>Test:{{ app('request')->cookie('LocationCookie')}}</p>
-            <a href="/report" class="btn btn-primary">Rport Page</a>
-          </div>
+<!-- Testing only --><p>Test: {{app('request')->cookie('LocationCookie')}}</p>
+<!-- check if the  location cookie is set or not-->      
+       @if (app('request')->cookie('LocationCookie') == null )
+        @include('select-location')
+        @else
+          <div class="col-md-8">
+          <h3>You have already selected a location, please proceed to the forms.</h3>
           <hr>
-        </div>
+          </div>
+       @endif
+<!-- end of check if the  location cookie is set or not--> 
+
+<!-- stats side bar -->
       <div class="col-md-3 col-md-offset-1">
           <h2>Sidebar Stat</h2>
           <!-- Pie Cahrt Start -->
@@ -68,7 +70,6 @@
           <!-- Pie Chart Code end -->
       </div>
 <!-- Testing zone -->
-
 <p>Testing Area:</p>
 @for ($i=0; $i<count($posts); $i++)
 <p>ID: {{ $posts[$i]['id'] }}, Category: {{ $posts[$i]['category'] }}, Location: {{ $posts[$i]['location'] }}</p>
