@@ -9,7 +9,10 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 //new imports
 use App\Post; //call the Post model
 use App\Location; //call the Location Model
+use App\Cat; //call the Cat Model
+use App\Presentation; //call the Presentation Model
 use Illuminate\Http\Request;//using Http request
+use DB; //multiple records insert
 
 class PagesController extends Controller{
 /*
@@ -22,7 +25,8 @@ class PagesController extends Controller{
       //return view('welcome', ['posts'=> $posts]);//another way to pass an aray of json data
     }
     public function getOndesk(){
-        return view('ondesk');
+        $cats = Cat::all();
+        return view('ondesk')->withCats($cats);
     }
     public function getOffdesk(){
         return view('offdesk');
@@ -62,13 +66,13 @@ class PagesController extends Controller{
 /*
 *Post Functions
 */    
-    public function store(Request $request){
-        //return $request->all();
-        $name = 'LocationCookie';
+    public function storeOnDesk(Request $request){
+        $cats = Cat::all();
+        $name = 'LocationCookie';//cookie name
         $value = $request -> cookie($name);
         $data = new Post;
         $categoryID = $request->input('categoryID');
-        $data->category = $request->input('categoryID');
+        $data->category = $categoryID;
        // $data->subcategory = $request['subcategory']; //for a later use, not neede for current requirements
        // $data->location = $request['location'];
         $data->location = $value;
@@ -76,9 +80,108 @@ class PagesController extends Controller{
         if($value == null || $categoryID == null){
             return view('warning');
         }else {
-        $data->save();
+            $data->save();
         }
-        return view ('ondesk');
+        //send the cats to the post view as well to be able to display them
+        return view('ondesk')->withCats($cats);
+    }
+    public function storeOffDesk(Request $request){
+//Models
+        $posts_data = new Post;
+        $posts_data_a = new Post; //new temp model instance
+        $posts_data_b = new Post; //new temp model instance
+        $posts_data_c = new Post; //new temp model instance
+        $presentations_data = new Presentation ;
+//cats  A B C      
+        $A = 1;
+        $B = 2;
+        $C = 3;
+//cookie
+        $name = 'LocationCookie';
+        $value = $request -> cookie($name);  
+        //used for single DB entry     
+        $posts_data->location = $value;
+        $posts_data_a->location = $value;
+        $posts_data_b->location = $value;
+        $posts_data_c->location = $value;
+//form
+        //$organizer = $request['name-input'];
+        $tot_A = $request->input('input-a');
+        $tot_B = $request->input('input-b');
+        $tot_C = $request->input('input-c');
+//exceptions        
+        if($value == null){
+            return view('warning');
+        }elseif ($tot_A == null && $tot_B == null && $tot_C == null){
+            return view('warning');
+        }elseif($tot_A == null && $tot_B == null && $tot_C != null){
+            if($tot_C > 1){
+                for($i=0; $i<$tot_C;$i++){
+                    $posts_data_c = new Post; //new temp model instance
+                    $posts_data_c->category = $C;
+                    $posts_data_c->location = $value;
+                    $posts_data_c->save();
+                }
+            }else{
+                $posts_data_c->category = $C;
+                $posts_data_c->save();
+            }
+        }elseif($tot_A == null && $tot_B != null && $tot_C == null){
+            if($tot_B > 1){
+                for($i=0; $i<$tot_B;$i++){
+                    $posts_data_b = new Post; //new temp model instance
+                    $posts_data_b->category = $B;
+                    $posts_data_b->location = $value;
+                    $posts_data_b->save();
+                }
+            }else {
+                $posts_data_b->category = $B;
+                $posts_data_b->save();
+            }
+        }elseif($tot_A == null && $tot_B != null && $tot_C != null){
+            if($tot_B > 1 && $tot_C > 1){
+                for($i=0; $i<$tot_B; $i++){
+                    $posts_data_b = new Post; //new temp model instance
+                    $posts_data_b->category = $B;
+                    $posts_data_b->location = $value;
+                    $posts_data_b->save();
+                }
+                for($i=0; $i<$tot_C; $i++){
+                    $posts_data_c = new Post; //new temp model instance
+                    $posts_data_c->category = $C;
+                    $posts_data_c->location = $value;
+                    $posts_data_c->save();
+                }
+            }elseif($tot_B > 1 && $tot_C <= 1){
+                for($i=0; $i<$tot_B; $i++){
+                    $posts_data_b = new Post; //new temp model instance
+                    $posts_data_b->category = $B;
+                    $posts_data_b->location = $value;
+                    $posts_data_b->save();
+                }
+                $posts_data_c->category = $C;
+                $posts_data_c->save();
+            }elseif($tot_B <= 1 && $tot_C > 1){
+                for($i=0; $i<$tot_C; $i++){
+                    $posts_data_c = new Post; //new temp model instance
+                    $posts_data_c->category = $C;
+                    $posts_data_c->location = $value;
+                    $posts_data_c->save();
+                }
+                $posts_data_b->category = $B;
+                $posts_data_b->save();
+            }else {
+                $posts_data_b->category = $B;
+                $posts_data_b->save();
+
+                $posts_data_c->category = $C;
+                $posts_data_c->save();
+            }
+        }elseif($tot_A != null && $tot_B == null && $tot_C == null){
+            return 'B and C are null';
+        }
+        
+        return view('success');
     }
     public function setCookie(Request $request){
         $name = 'LocationCookie';

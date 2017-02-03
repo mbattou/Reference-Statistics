@@ -24,7 +24,8 @@ Route::get('/store',    'PagesController@getData');
 Route::get('/sample',   'PagesController@getSample');
 ROUTE::get('/clear',    'PagesController@clearCookie');
 //POST
-Route::post('/store', 'PagesController@store');//store: insert into DB
+Route::post('/ondesk', 'PagesController@storeOnDesk');//store: insert into DB
+Route::post('/offdesk', 'PagesController@storeOffDesk');//store: insert into DB
 Route::post('/setCookie', 'PagesController@setCookie');//setCookie: sets the cookie
 //testing date time picker
 Route::get('/test', 'PagesController@getTest');
