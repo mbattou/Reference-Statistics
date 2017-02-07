@@ -12,7 +12,7 @@
         </div>
       </div>
       <!-- end of header .row -->
-<!-- Testing only --><p>Test: {{app('request')->cookie('LocationCookie')}}</p>
+<!-- Testing only <p>Test: {{app('request')->cookie('LocationCookie')}}</p> -->
 <!-- check if the  location cookie is set or not-->      
        @if (app('request')->cookie('LocationCookie') == null )
         @include('select-location')
@@ -26,7 +26,7 @@
 
 <!-- stats side bar -->
       <div class="col-md-3 col-md-offset-1">
-          <h2>Sidebar Stat</h2>
+          <h2>Sidebar Statistics</h2>
           <!-- Pie Cahrt Start -->
           <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -48,10 +48,9 @@
         data.addColumn('string', 'Category');
         data.addColumn('number', 'Location');
         data.addRows([
-          ['A', 13],
-          ['B', 3],
-          ['C', 1],
-          ['Other', 1]
+          ['Cat A', {{ $posts[10]['id'] }}],
+          ['Cat B', {{ $posts[20]['id'] }}],
+          ['Cat C', {{ $posts[100]['id'] }}]
         ]);
 
         // Set chart options
@@ -70,9 +69,11 @@
           <!-- Pie Chart Code end -->
       </div>
 <!-- Testing zone -->
+<!--
 <p>Testing Area:</p>
 @for ($i=0; $i<count($posts); $i++)
 <p>ID: {{ $posts[$i]['id'] }}, Category: {{ $posts[$i]['category'] }}, Location: {{ $posts[$i]['location'] }}</p>
 @endfor
+-->
 <hr>
 @endsection

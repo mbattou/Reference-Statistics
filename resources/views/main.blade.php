@@ -86,7 +86,9 @@ This is the main page that will contain the common layout of the application
 
 <!-- Footer -->
 <footer class="container-fluid text-center">
+<div class="container">
   <p>Copyright - All rights reserved.</p>
+  </div>
 </footer>
 
   </body>
