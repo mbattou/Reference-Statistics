@@ -5,10 +5,12 @@
 <h1>Off-Desk Form</h1>
 @if(app('request')->cookie('LocationCookie') == null)
   @include('no-location')
+<!-- stats side bar -->
+  @include('sidebar')
 @else
 <div class="col-md-7">
 <hr>
-<h3>Please fill the form</h3>
+<h3>Category Count</h3>
 <hr>
  <form action="offdesk" method="POST">
   {!! csrf_field() !!} <!-- protect form from cross site forgery -->

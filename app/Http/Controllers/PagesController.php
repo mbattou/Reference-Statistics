@@ -25,11 +25,15 @@ class PagesController extends Controller{
       //return view('welcome', ['posts'=> $posts]);//another way to pass an aray of json data
     }
     public function getOndesk(){
+        $posts = Post::all();
         $cats = Cat::all();
-        return view('ondesk')->withCats($cats);
+        //passing posts values for the sidebar on ondesk form
+        return view('ondesk')->withCats($cats)->withPosts($posts);
     }
     public function getOffdesk(){
-        return view('offdesk');
+        $posts = Post::all();
+        //passing posts values for the sidebar on offdesk form
+        return view('offdesk')->withPosts($posts);
     }
     public function getReport(){
         return view('report');

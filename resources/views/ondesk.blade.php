@@ -24,6 +24,8 @@ These values are saves in the $cats variable and passed to both Get and Post vie
 <!-- check if cookie is set or not -->
 @if(app('request')->cookie('LocationCookie') == null)
  @include('no-location')
+<!-- stats side bar -->
+ @include('sidebar')
  @else
  <p>Simply press on a category to submit</p>
 <div class="col-md-3"> <!-- to centre: col-md-4 col-md-offset-4 -->
