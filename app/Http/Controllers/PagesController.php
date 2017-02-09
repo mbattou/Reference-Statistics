@@ -1,18 +1,18 @@
 <?php
-
+//default namespace
 namespace App\Http\Controllers;
-
+//default imports
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-//new imports
+//new imports - Models
 use App\Post; //call the Post model
 use App\Location; //call the Location Model
 use App\Cat; //call the Cat Model
 use App\Presentation; //call the Presentation Model
 use Illuminate\Http\Request;//using Http request
-use DB; //multiple records insert
+use DB; //use query builder DB facade
 
 class PagesController extends Controller{
 /*
@@ -22,7 +22,6 @@ class PagesController extends Controller{
         $posts = Post::all();
         $locations = Location::all();
         return view('welcome')->withPosts($posts)->withLocations($locations);
-      //return view('welcome', ['posts'=> $posts]);//another way to pass an aray of json data
     }
     public function getOndesk(){
         $posts = Post::all();
@@ -53,19 +52,20 @@ class PagesController extends Controller{
         return view('demo');
     }
     public function getDash(){
-      //  return view('dash');
-        return view('dash');
+        $stats_data = [];
+        $total_A = DB::table('posts')->where('category','1')->count();
+        $total_B = DB::table('posts')->where('category','2')->count();
+        $total_C = DB::table('posts')->where('category','3')->count();
+        $stats_data['total_A'] = $total_A;
+        $stats_data['total_B'] = $total_B;
+        $stats_data['total_C'] = $total_C;
+        return view('dash', ['stats_data'=>$stats_data]);
     }
     public function getData(){
         return view('post');
     }
-    public function getSample(){
-        //a sample a statistical view
-        return view('sample');
-    }
     public function getTest(){
         return view('test');
-        //return response('test')->cookie($cookie);
     }
 /*
 *Post Functions

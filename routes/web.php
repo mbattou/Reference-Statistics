@@ -21,7 +21,6 @@ Route::get('/about',    'PagesController@getAbout');
 Route::get('/demo',     'PagesController@getDemo');
 Route::get('/dash',     'PagesController@getDash');
 Route::get('/store',    'PagesController@getData');
-Route::get('/sample',   'PagesController@getSample');
 ROUTE::get('/clear',    'PagesController@clearCookie');
 //POST
 Route::post('/ondesk', 'PagesController@storeOnDesk');//store: insert into DB

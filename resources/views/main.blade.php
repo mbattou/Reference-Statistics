@@ -55,12 +55,12 @@ This is the main page that will contain the common layout of the application
               <ul class="dropdown-menu" style="background-color:#DCDCDC">
                 <li><a href="/ondesk">On Desk From</a></li>
                 <li><a href="/offdesk">Off Desk From</a></li>
+                <li role="separator" class="divider">Stats Dashboard</li>
                 <li><a href="/report">Report</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="/demo">Demo</a></li>
                 <li role="separator" class="divider">Stats Dashboard</li>
-                <li><a href="/dash">Stats Dash</a></li>
-                <li><a href="/sample">Sample Dashboard</a></li>
+                <li><a href="/dash">Dashboard</a></li>
               </ul>
             </li>
           </ul>

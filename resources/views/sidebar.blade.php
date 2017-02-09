@@ -1,5 +1,5 @@
 <!-- sidebar statistics -->
-<div class="col-md-3 col-md-offset-1">
+<div class="col-md-3 col-md-offset-1" align="center">
           <h3>Sidebar Statistics</h3>
           <hr>
           <!-- Pie Cahrt Start -->

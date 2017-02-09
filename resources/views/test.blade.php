@@ -9,13 +9,4 @@ This is the main layout of the date time picker
 @section('content')
 <p>Splaassh Zone</p>
 
-<form action="setCookie" method="POST">
-    {!! csrf_field() !!} <!-- protect form from cross site forgery -->
-    <label>
-        Location (Cookie):<input name="location" type="text">
-    </label>
-    <br/>
-    Submit
-    <input type="submit" value="Submit">
-</form>
   @endsection
