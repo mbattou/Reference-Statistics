@@ -26,5 +26,5 @@ ROUTE::get('/clear',    'PagesController@clearCookie');
 Route::post('/ondesk', 'PagesController@storeOnDesk');//store: insert into DB
 Route::post('/offdesk', 'PagesController@storeOffDesk');//store: insert into DB
 Route::post('/setCookie', 'PagesController@setCookie');//setCookie: sets the cookie
-//testing date time picker
+//testing routes
 Route::get('/test', 'PagesController@getTest');

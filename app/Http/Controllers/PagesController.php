@@ -13,6 +13,7 @@ use App\Cat; //call the Cat Model
 use App\Presentation; //call the Presentation Model
 use Illuminate\Http\Request;//using Http request
 use DB; //use query builder DB facade
+use Carbon\Carbon; //get current timestamp for query builder whereBetween
 
 class PagesController extends Controller{
 /*
@@ -53,9 +54,9 @@ class PagesController extends Controller{
     }
     public function getDash(){
         $stats_data = [];
-        $total_A = DB::table('posts')->where('category','1')->count();
-        $total_B = DB::table('posts')->where('category','2')->count();
-        $total_C = DB::table('posts')->where('category','3')->count();
+        $total_A = DB::table('posts')->where('category','=', 1)->count();
+        $total_B = DB::table('posts')->where('category','=', 2)->count();
+        $total_C = DB::table('posts')->where('category','=', 3)->count();
         $stats_data['total_A'] = $total_A;
         $stats_data['total_B'] = $total_B;
         $stats_data['total_C'] = $total_C;
@@ -65,7 +66,19 @@ class PagesController extends Controller{
         return view('post');
     }
     public function getTest(){
-        return view('test');
+        $stats_data = [];
+        $total_A = DB::table('posts')->where('category','=', 1)->count();
+        $total_B = DB::table('posts')->where('category','=', 2)->count();
+        $total_C = DB::table('posts')->where('category','=', 3)->count();
+        $one_day_ago_A =   DB::table('posts')->where('category', '=', 1)->where('created_at','>=', Carbon::now()->subDay())->count();
+        $one_week_ago_A =   DB::table('posts')->where('category', '=', 1)->where('created_at','>=', Carbon::now()->subweek())->count();
+        $stats_data['total_A'] = $total_A;
+        $stats_data['total_B'] = $total_B;
+        $stats_data['total_C'] = $total_C;
+        $stats_data['one_day_ago_A'] = $one_day_ago_A;
+        $stats_data['one_week_ago_A'] = $one_week_ago_A;
+
+        return view('test', ['stats_data'=>$stats_data]);
     }
 /*
 *Post Functions
