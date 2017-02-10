@@ -1,6 +1,6 @@
   <!-- 
     Dashboard # 2
-    Add description here
+    Total - Last month - Categories - For All locations
 --> 
   <script type="text/javascript">
     google.charts.load("current", {packages:["corechart"]});

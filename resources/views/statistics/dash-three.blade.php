@@ -1,7 +1,7 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <!-- 
     Dashboard # 3
-    Add description here
+        Total - Last week - Categories - For All locations
 --> 
   <script type="text/javascript">
     google.charts.load("current", {packages:['corechart']});

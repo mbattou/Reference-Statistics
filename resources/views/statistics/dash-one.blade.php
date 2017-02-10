@@ -1,7 +1,7 @@
 <!-- 
     Dashboard # 1 
-    Add description here
---> 
+    Total - Since begining of time - Categories - For All locations
+    --> 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load("current", {packages:["corechart"]});
