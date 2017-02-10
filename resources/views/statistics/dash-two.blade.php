@@ -7,15 +7,15 @@
     google.charts.setOnLoadCallback(drawChart);
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
-        ["Category", "Total by location"],
-        ["Cat A", {{ $stats_data['total_A'] }} ],
-        ["Cat B", {{ $stats_data['total_B'] }} ],
-        ["Cat C", {{ $stats_data['total_C'] }} ],
+        ["Category", "Total"],
+        ["Cat A", {{ $stats_data['one_month_ago_A'] }} ],
+        ["Cat B", {{ $stats_data['one_month_ago_B'] }} ],
+        ["Cat C", {{ $stats_data['one_month_ago_C'] }} ],
       ]);
 
       var view = new google.visualization.DataView(data);
       var options = {
-        title: "Tot categories by location - since start of time",
+        title: "Total categories - since last month",
         legend: "none",
         backgroundColor: '#DCDCDC',
       };

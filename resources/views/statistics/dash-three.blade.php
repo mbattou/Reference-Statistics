@@ -9,14 +9,14 @@
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
         ["Category", "Total", { role: "style" } ],
-        ["Cat A", {{ $stats_data['total_A'] }} , "#8F001A"],
-        ["Cat B", {{ $stats_data['total_B'] }} , "#8F001A"],
-        ["Cat C", {{ $stats_data['total_C'] }} , "#8F001A"]
+        ["Cat A", {{ $stats_data['one_week_ago_A'] }} , "#8F001A"],
+        ["Cat B", {{ $stats_data['one_week_ago_B'] }} , "#8F001A"],
+        ["Cat C", {{ $stats_data['one_week_ago_C'] }} , "#8F001A"]
       ]);
 
       var view = new google.visualization.DataView(data);
       var options = {
-        title: "Total - last 24 hours",
+        title: "Total categories - since last week",
         legend: "none",
         backgroundColor: '#DCDCDC',
       };

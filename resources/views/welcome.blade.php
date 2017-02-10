@@ -26,14 +26,5 @@
 
 <!-- stats side bar -->
 @include('sidebar')
-<!--
-      -->
-<!-- Testing zone -->
-<!--
-<p>Testing Area:</p>
-@for ($i=0; $i<count($posts); $i++)
-<p>ID: {{ $posts[$i]['id'] }}, Category: {{ $posts[$i]['category'] }}, Location: {{ $posts[$i]['location'] }}</p>
-@endfor
--->
 <hr>
 @endsection

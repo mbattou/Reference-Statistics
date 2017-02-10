@@ -20,9 +20,8 @@ class PagesController extends Controller{
 *Get Functions
 */       
     public function getIndex(){
-        $posts = Post::all();
         $locations = Location::all();
-        return view('welcome')->withPosts($posts)->withLocations($locations);
+        return view('welcome', ['locations'=>$locations]);
     }
     public function getOndesk(){
         $posts = Post::all();
@@ -57,9 +56,27 @@ class PagesController extends Controller{
         $total_A = DB::table('posts')->where('category','=', 1)->count();
         $total_B = DB::table('posts')->where('category','=', 2)->count();
         $total_C = DB::table('posts')->where('category','=', 3)->count();
+
+        $one_week_ago_A =   DB::table('posts')->where('category', '=', 1)->where('created_at','>=', Carbon::now()->subWeek())->count();
+        $one_week_ago_B =   DB::table('posts')->where('category', '=', 2)->where('created_at','>=', Carbon::now()->subWeek())->count();
+        $one_week_ago_C =   DB::table('posts')->where('category', '=', 3)->where('created_at','>=', Carbon::now()->subWeek())->count();
+        
+        $one_month_ago_A =   DB::table('posts')->where('category', '=', 1)->where('created_at','>=', Carbon::now()->subMonth())->count();
+        $one_month_ago_B =   DB::table('posts')->where('category', '=', 2)->where('created_at','>=', Carbon::now()->subMonth())->count();
+        $one_month_ago_C =   DB::table('posts')->where('category', '=', 3)->where('created_at','>=', Carbon::now()->subMonth())->count();
+
         $stats_data['total_A'] = $total_A;
         $stats_data['total_B'] = $total_B;
         $stats_data['total_C'] = $total_C;
+
+        $stats_data['one_week_ago_A'] = $one_week_ago_A;
+        $stats_data['one_week_ago_B'] = $one_week_ago_B;
+        $stats_data['one_week_ago_C'] = $one_week_ago_C;
+
+        $stats_data['one_month_ago_A'] = $one_month_ago_A;
+        $stats_data['one_month_ago_B'] = $one_month_ago_B;
+        $stats_data['one_month_ago_C'] = $one_month_ago_C;
+
         return view('dash', ['stats_data'=>$stats_data]);
     }
     public function getData(){

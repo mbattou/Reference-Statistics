@@ -1,4 +1,8 @@
 <!-- sidebar statistics -->
+<!-- 
+  stats: last 24 hours statistics 
+  returns the total of categories
+  -->
 <div class="col-md-3 col-md-offset-1" align="center">
           <h3>Sidebar Statistics</h3>
           <hr>
@@ -23,9 +27,9 @@
         data.addColumn('string', 'Category');
         data.addColumn('number', 'Location');
         data.addRows([
-          ['Cat A', {{ $posts[10]['id'] }}],
-          ['Cat B', {{ $posts[20]['id'] }}],
-          ['Cat C', {{ $posts[100]['id'] }}]
+          ['Cat A', {{ $stats_data['total_A'] }} ],
+          ['Cat B', {{ $stats_data['total_B'] }} ],
+          ['Cat C', {{ $stats_data['total_C'] }} ]
         ]);
 
         // Set chart options

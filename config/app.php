@@ -177,6 +177,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        //added service provider to share stats_data across multiple views
+        App\Providers\ComposerServiceProvider::class,
 
     ],
 
