@@ -88,7 +88,7 @@ class PagesController extends Controller{
         $total_B = DB::table('posts')->where('category','=', 2)->count();
         $total_C = DB::table('posts')->where('category','=', 3)->count();
         $one_day_ago_A =   DB::table('posts')->where('category', '=', 1)->where('created_at','>=', Carbon::now()->subDay())->count();
-        $one_week_ago_A =   DB::table('posts')->where('category', '=', 1)->where('created_at','>=', Carbon::now()->subweek())->count();
+        $one_week_ago_A =   DB::table('posts')->where('category', '=', 1)->where('created_at','>=', Carbon::now()->subWeek())->count();
         $stats_data['total_A'] = $total_A;
         $stats_data['total_B'] = $total_B;
         $stats_data['total_C'] = $total_C;

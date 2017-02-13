@@ -2,6 +2,11 @@
     Dashboard # 2
     Total - Last month - Categories - For All locations
 --> 
+  @if($stats_data['one_month_ago_A'] == 0  && $stats_data['one_month_ago_B'] == 0 && $stats_data['one_month_ago_C'] == 0)
+
+    Statistics not available.  
+
+    @else
   <script type="text/javascript">
     google.charts.load("current", {packages:["corechart"]});
     google.charts.setOnLoadCallback(drawChart);
@@ -24,3 +29,4 @@
   }
   </script>
 <div id="barchart_values" style=""></div>
+@endif

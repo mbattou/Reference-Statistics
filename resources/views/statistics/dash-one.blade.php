@@ -2,6 +2,11 @@
     Dashboard # 1 
     Total - Since begining of time - Categories - For All locations
     --> 
+  @if($stats_data['total_A'] == 0  && $stats_data['total_B'] == 0 && $stats_data['total_C'] == 0)
+
+    Statistics not available.  
+
+    @else
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load("current", {packages:["corechart"]});
@@ -26,3 +31,4 @@
     </script>
 
     <div id="donutchart" style=""></div>
+    @endif

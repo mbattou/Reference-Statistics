@@ -1,8 +1,13 @@
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <!-- 
     Dashboard # 3
         Total - Last week - Categories - For All locations
 --> 
+  @if($stats_data['one_week_ago_A'] == 0  && $stats_data['one_week_ago_B'] == 0 && $stats_data['one_week_ago_C'] == 0)
+
+ Statistics not available.
+
+    @else
+<script type="text/javascript"></script>
   <script type="text/javascript">
     google.charts.load("current", {packages:['corechart']});
     google.charts.setOnLoadCallback(drawChart);
@@ -25,3 +30,4 @@
   }
   </script>
 <div id="columnchart_values" style=""></div>
+@endif
