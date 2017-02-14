@@ -19,13 +19,17 @@
        @if (app('request')->cookie('LocationCookie') == null )
         @include('select-location')
         @else
-          <div class="col-md-8">
-            <h3>You have already selected a location, please proceed to the forms.</h3>
-            <hr>
-          </div>
+
+<div class="col-md-6">
+<div class="alert alert-info" role="alert">
+  <strong>Thank you! You have already selected a location.</strong>
+</div>
+</div>
+ <div class="col-md-8"></div><!-- empty div for grid readjustment-->
        @endif
 <!-- end of check if the  location cookie is set or not--> 
 
 <!-- stats side bar -->
+<br/>
 @include('sidebar')
 @endsection

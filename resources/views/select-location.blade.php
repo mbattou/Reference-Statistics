@@ -8,7 +8,7 @@
   <strong>Please select your location  from the dropdown menu.</strong>
 </div>
 </div>
-<!-- dropdown -->
+<!-- locations dropdown -->
 <div class="col-md-8">
  <form action="setCookie" method="POST">
 {!! csrf_field() !!} <!-- protect form from cross site forgery -->
