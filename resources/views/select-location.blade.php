@@ -3,8 +3,11 @@
     has been selected - no location cookie set yet! 
     Form: calls the setCookie() method in the PagesController
 -->
-
-<h3>Please select your location  from the dropdown menu.</h3>
+<div class="row col-md-6">
+<div class="alert alert-success" role="alert">
+  <strong>Please select your location  from the dropdown menu.</strong>
+</div>
+</div>
 <!-- dropdown -->
 <div class="col-md-8">
  <form action="setCookie" method="POST">

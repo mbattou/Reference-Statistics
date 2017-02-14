@@ -12,7 +12,7 @@
           </div>
         </div>
       </div> 
-      
+
       <!-- end of header .row -->
 <!-- Testing only <p>Test: {{app('request')->cookie('LocationCookie')}}</p> -->
 <!-- check if the  location cookie is set or not-->      
@@ -28,5 +28,4 @@
 
 <!-- stats side bar -->
 @include('sidebar')
-<hr>
 @endsection
