@@ -11,8 +11,7 @@ This is the main page that will contain the common layout of the application
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Reference Statistics Tool - @yield('title')</title>
-    <!-- CHANGE THIS TITLE FOR EACH PAGE -->
-
+    <!-- CHANGE THIS TITLE FOR EACH PAGE -->   
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -26,7 +25,7 @@ This is the main page that will contain the common layout of the application
   <body style="background-color:#DCDCDC"><!-- Light grey for the body background-->
     <!-- Default Bootstrap Navbar -->
    <!-- <nav class="navbar navbar-default"> -->
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse" style="background-color:#8f001a; border-color:#a32b40">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -36,9 +35,8 @@ This is the main page that will contain the common layout of the application
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">Reference Statistics Tool</a>
+          <a class="navbar-brand" style="color:white" href="/">Reference Statistics Tool</a>
         </div>
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
           <ul class="nav navbar-nav">
@@ -52,7 +50,7 @@ This is the main page that will contain the common layout of the application
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Forms <span class="caret"></span></a>
-              <ul class="dropdown-menu" style="background-color:#DCDCDC">
+              <ul class="dropdown-menu" style="background-color:#DCDCDC"><!-- Light grey for the body background-->
                 <li><a href="/ondesk">On Desk From</a></li>
                 <li><a href="/offdesk">Off Desk From</a></li>
                 <li role="separator" class="divider">Stats Dashboard</li>
@@ -69,7 +67,6 @@ This is the main page that will contain the common layout of the application
       </div>
       <!-- /.container-fluid -->
     </nav>
-
     <div class="container">
     <!-- creating a blade layout -->
         @yield('content')
