@@ -24,15 +24,12 @@ class PagesController extends Controller{
         return view('welcome', ['locations'=>$locations]);
     }
     public function getOndesk(){
-        $posts = Post::all();
         $cats = Cat::all();
         //passing posts values for the sidebar on ondesk form
-        return view('ondesk')->withCats($cats)->withPosts($posts);
+        return view('ondesk')->withCats($cats);
     }
     public function getOffdesk(){
-        $posts = Post::all();
-        //passing posts values for the sidebar on offdesk form
-        return view('offdesk')->withPosts($posts);
+        return view('offdesk');
     }
     public function getReport(){
         return view('report');
