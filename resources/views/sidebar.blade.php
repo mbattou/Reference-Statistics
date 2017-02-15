@@ -41,7 +41,7 @@
         ]);
 
         // Set chart options
-        var options = {'title':'',
+        var options = {'title':'Last 24 hours count',
                        'width':350,
                        'height':300,
                        'backgroundColor':'#DCDCDC'//uOttawa grey colour

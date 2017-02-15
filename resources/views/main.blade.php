@@ -82,11 +82,12 @@ This is the main page that will contain the common layout of the application
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
 <!-- Footer -->
+<!--
 <footer class="container-fluid text-center">
 <div class="container">
   <p>Copyright - All rights reserved.</p>
   </div>
 </footer>
-
+-->
   </body>
 </html>

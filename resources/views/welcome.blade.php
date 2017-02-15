@@ -21,8 +21,8 @@
         @else
 
 <div class="col-md-6">
-<div class="alert alert-info" role="alert">
-  <strong>Thank you! You have already selected a location.</strong>
+<div class="alert alert-success" role="alert">
+  <strong>Thank you! You have already selected a location. Proceed to the forms.</strong>
 </div>
 </div>
  <div class="col-md-8"></div><!-- empty div for grid readjustment-->

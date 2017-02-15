@@ -4,10 +4,12 @@
 
 <h1>Contact</h1>
 <br/><br/>
-<!-- SUCCESS ALERT -->
+<!-- INFO ALERT -->
 <div class="col-md-6">
 <div class="alert alert-info">
-  <strong>Info!</strong> Please, feel free to contact {{ $data['admin'] }} at:<strong> {{ $data['email'] }}</strong>.
+  <strong>Please, feel free to contact</strong> {{ $data['admin'] }} at:<strong> {{ $data['email'] }}</strong>.<br/>
+  OR<br/>
+  <strong>Contact </strong><a href="http://biblio.uottawa.ca/en/technical-support">technical support</a>.
 </div>
 </div>
 
