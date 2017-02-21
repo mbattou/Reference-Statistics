@@ -3,13 +3,14 @@
     has been selected - no location cookie set yet! 
     Form: calls the setCookie() method in the PagesController
 -->
-<div class="row col-md-6">
+
+<!-- locations dropdown -->
+<div class="col-md-6">
+<!-- alert div -->
 <div class="alert alert-success" role="alert">
   <strong>Please select your location  from the dropdown menu.</strong>
 </div>
-</div>
-<!-- locations dropdown -->
-<div class="col-md-8">
+<!-- end alert div -->
  <form action="setCookie" method="POST">
 {!! csrf_field() !!} <!-- protect form from cross site forgery -->
 <div class="form-group row">

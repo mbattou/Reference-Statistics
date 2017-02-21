@@ -6,12 +6,11 @@
 <!-- SUCCESS ALERT -->
 <div class="col-md-6">
 <div class="alert alert-success">
-  <strong>Success!</strong> You have set your location, <a href="/" class="alert-link">please go back to the home page</a>.
-</div>
-<p>OR<p>
-<!-- Cookie INFO ALERT -->
-<div class="alert alert-info">
-  <strong>Info!</strong> <a href="/about" class="alert-link">read more about browser cookies</a>.
+  <strong>Success!</strong> You have set your location, Please proceed to the forms.<br/><br/>
+
+Submit <a href="/ondesk" class="alert-link">individual category statistics from service desk</a><br/>
+Submit <a href="/offdesk" class="alert-link">batch category statistics off service desk</a><br/>
+Submit <a href="/training" class="alert-link">batch trainings, presentations and courses statistics</a>
 </div>
 </div>
 @endsection
