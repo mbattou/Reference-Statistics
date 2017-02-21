@@ -424,6 +424,33 @@ class PagesController extends Controller{
         }      
         return view('success');
     }
+    public function storeTraining(Request $request){
+        $cats = Presentation::all();
+        $name = 'LocationCookie';//cookie name
+        $value = $request -> cookie($name);
+        $data = new Presentation;
+        $lastName = $request->input('lastname');
+        $firstName = $request->input('firstname');
+        $fullName = $firstName." ".$lastName;
+        $numberPresentation = $request->input('number-presentation');
+        $numberParticipant = $request->input('number-participant');
+        $approxDate = $request->input('date');
+        $approxDuration = $request->input('duration');
+        //put data together
+        $data->length = $approxDuration;
+        $data->presenter = $fullName;
+        $data->tot_participant = $numberParticipant;
+        $data->date = $approxDate;
+       // $data->tot_presentation = $numberPresentation;
+        $data->location = $value;
+
+        if($value == null){
+            return view('warning');
+        }else {
+            $data->save();
+        }
+        return view('success');
+    }
     public function setCookie(Request $request){
         $name = 'LocationCookie';
         //if you are getting the value from input box simply use: $value = $request['location'] where location is the name of the input field
@@ -435,11 +462,5 @@ class PagesController extends Controller{
 /*
 *Other functions
 */    
-    public function clearCookie(){
-        $name = 'LocationCookie';
-        $value = 'NuLL';//should be replaced
-        $life = 0;
-        $cookie = cookie($name,$value,$life);
-        return response('Cookie cleared!!')->withCookie($cookie);
-    }
+
 }

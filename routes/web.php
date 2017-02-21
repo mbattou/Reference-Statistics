@@ -26,6 +26,7 @@ ROUTE::get('/clear',    'PagesController@clearCookie');
 //POST
 Route::post('/ondesk', 'PagesController@storeOnDesk');//store: insert into DB
 Route::post('/offdesk', 'PagesController@storeOffDesk');//store: insert into DB
+Route::post('/training', 'PagesController@storeTraining');//store: insert into DB
 Route::post('/setCookie', 'PagesController@setCookie');//setCookie: sets the cookie
 //testing routes
 Route::get('/test', 'PagesController@getTest');

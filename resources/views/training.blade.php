@@ -1,5 +1,5 @@
 @extends('main')
-@section('title', 'On Desk')
+@section('title', 'Training')
 @section('content')
 <!-- 
 The training form
@@ -19,27 +19,33 @@ The training form
 <h3>Submit batch of stats</h3>
 <hr>
 <div class="form-group row">
-  <label for="name-input" class="col-xs-2 col-form-label">First, Last </label>
+  <label for="name-input" class="col-xs-2 col-form-label">Last Name</label>
   <div class="col-xs-5">
-    <input class="form-control" type="text" value="" id="name-input">
+    <input class="form-control" type="text" value="" name="lastname" id="name-input">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="name-input" class="col-xs-2 col-form-label">First Name</label>
+  <div class="col-xs-5">
+    <input class="form-control" type="text" value="" name="firstname" id="name-input">
   </div>
 </div>
 <div class="form-group row">
   <label for="number-presentation-input" class="col-xs-2 col-form-label">Number of presentations</label>
   <div class="col-xs-5">
-    <input class="form-control" type="number" id="number-presentation-input">
+    <input class="form-control" type="number" name="number-presentation" id="number-presentation-input">
   </div>
 </div>
 <div class="form-group row">
   <label for="number-participant-input" class="col-xs-2 col-form-label">Number of participants</label>
   <div class="col-xs-5">
-    <input class="form-control" type="number" id="number-participant-input">
+    <input class="form-control" type="number" name="number-participant" id="number-participant-input">
   </div>
 </div>
 <div class="form-group row">
-  <label for="date-input" class="col-xs-2 col-form-label">Date</label>
+  <label for="date-input" class="col-xs-2 col-form-label">Approximate Date</label>
   <div class="col-xs-5">
-    <input class="form-control" type="date" value="today" id="date-input">
+    <input class="form-control" type="date" value="today" name="date" id="date-input">
   </div>
 </div>
     <div class="form-group row">
@@ -49,7 +55,7 @@ The training form
         <div class="input-group-addon">
          <i class="glyphicon glyphicon-time"></i>
         </div>
-        <input class="form-control" type="text" value="01:30"  id="duration"/>
+        <input class="form-control" type="text" value="01:30" name="duration" id="duration"/>
        </div>
       </div>
      </div>
