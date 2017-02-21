@@ -15,7 +15,7 @@ class ComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer(
-            ['welcome', 'ondesk', 'offdesk'], 
+            ['welcome', 'ondesk', 'offdesk', 'training'], 
             'App\Http\ViewComposers\SideBarStatsComposer'
         );
     }

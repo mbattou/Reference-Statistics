@@ -39,28 +39,40 @@ This is the main page that will contain the common layout of the application
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
+          <!--
           <ul class="nav navbar-nav">
-           <!-- the old home page, active as default -->
-           <!-- <li class="active"><a href="/">Home</a></li> -->
             <li><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
-          <!-- Hide the dropdown for now-->
-          <ul class="nav navbar-nav navbar-right">
+          -->
+          <ul class="nav navbar-nav navbar-left">
+          <!-- Forms Dropdown -->
             <li class="dropdown">
-              <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Forms <span class="caret"></span></a>
+              <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Input Forms <span class="caret"></span></a>
               <ul class="dropdown-menu" style="background-color:#DCDCDC"><!-- Light grey for the body background-->
                 <li><a href="/ondesk">On Desk From</a></li>
+                 <li role="separator" class="divider"></li>
                 <li><a href="/offdesk">Off Desk From</a></li>
-                <li role="separator" class="divider">Stats Dashboard</li>
-                <li><a href="/report">Report</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="/demo">Demo</a></li>
-                <li role="separator" class="divider">Stats Dashboard</li>
-                <li><a href="/dash">Dashboard</a></li>
+                 <li><a href="/training">Training From</a></li>
               </ul>
             </li>
+            <!-- End of Forms Dropdown -->
+            <!-- Reports Dropdown -->
+              <li class="dropdown">
+              <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports <span class="caret"></span></a>
+              <ul class="dropdown-menu" style="background-color:#DCDCDC"><!-- Light grey for the body background-->
+                <li><a href="/report">Report</a></li>
+              </ul>
+            </li>
+            <!-- End of Reports Dropdown -->
+            <!-- Nav bar ul-->
+           <ul class="nav navbar-nav">
+            <li><a href="/dash"><span class="glyphicon glyphicon-stats"></span> Dashboard</a></li>
+            <li><a href="/demo">Demo</a></li>
+          </ul>
+          <!-- End of nav bar ul-->
           </ul>
         </div>
         <!-- /.navbar-collapse -->

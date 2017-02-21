@@ -31,9 +31,13 @@ class PagesController extends Controller{
     public function getOffdesk(){
         return view('offdesk');
     }
+    public function getTraining(){
+        return view('training');
+    }
     public function getReport(){
         return view('report');
     }
+   /*
     public function getContact(){
         $email = 'bibnet@uottawa.ca';
         $admin = "Library Systems";
@@ -45,6 +49,7 @@ class PagesController extends Controller{
     public function getAbout(){
         return view('about');
     }
+    */
     public function getDemo(){
         return view('demo');
     }
