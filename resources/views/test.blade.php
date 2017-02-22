@@ -15,17 +15,8 @@ Tot since One day ago (A) {{ $stats_data['one_day_ago_A'] }}<br/>
 Tot since One week ago (A) {{ $stats_data['one_week_ago_A'] }}<br/>
 
 --
-<form class="form-inline">
-  <label class="sr-only" >Name</label>
-  <div class="input-group">
-  <input type="text" class="form-control col-md-2" id="inlineFormInput" placeholder="Jane Doe">
-</div>
-  <label class="sr-only" for="inlineFormInputGroup">Username</label>
-  <div class="input-group">
-    <input type="text" class="form-control col-md-2" id="inlineFormInputGroup" placeholder="Username">
-  </div>
 
-</form>
+<i class="fa fa-asterisk text-danger">*</i>
 
 
   @endsection

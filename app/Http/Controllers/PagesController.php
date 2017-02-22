@@ -446,7 +446,11 @@ class PagesController extends Controller{
 
         if($value == null){
             return view('warning');
-        }else {
+        }elseif($numberPresentation == null || $numberParticipant == null || $approxDate == null || $approxDuration == null){
+            return view('error');
+    }elseif($numberPresentation == 0 || $numberParticipant == 0 || $approxDate == 0 || $approxDuration == 0){
+
+    }else {
             $data->save();
         }
         return view('success');
