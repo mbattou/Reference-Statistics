@@ -16,7 +16,7 @@ Tot since One week ago (A) {{ $stats_data['one_week_ago_A'] }}<br/>
 
 --
 
-<i class="fa fa-asterisk text-danger">*</i>
+<i class="text-danger">$</i>
 
 
   @endsection

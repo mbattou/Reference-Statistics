@@ -45,21 +45,21 @@ The training form
 -->
 <div class="form-group row">
   <label for="number-presentation-input" class="col-xs-2 col-form-label">Number of presentations</label>
-  <i class="fa fa-asterisk text-danger">*</i>
+  <i class="text-danger">*</i>
   <div class="col-xs-5">
     <input class="form-control" type="number" name="number-presentation" id="number-presentation-input" min="0" required="true">
   </div>
 </div>
 <div class="form-group row">
   <label for="number-participant-input" class="col-xs-2 col-form-label">Number of participants</label>
-    <i class="fa fa-asterisk text-danger">*</i>
+    <i class="text-danger">*</i>
   <div class="col-xs-5">
     <input class="form-control" type="number" name="number-participant" id="number-participant-input" min="0" required="true">
   </div>
 </div>
 <div class="form-group row">
   <label for="date-input" class="col-xs-2 col-form-label">Approximate Date</label>
-    <i class="fa fa-asterisk text-danger">*</i>
+    <i class="text-danger">*</i>
   <div class="col-xs-5">
     <input class="form-control" type="date" value="today" name="date" id="date-input" required="true">
   </div>
