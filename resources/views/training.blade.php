@@ -18,6 +18,18 @@ The training form
 <hr>
 <h3>Submit batch of stats</h3>
 <hr>
+<div class="form-inline">
+  <p><i>Optional</i></p>
+  <label class="sr-only" >First Name</label>
+  <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="firstname" placeholder="First Name">
+
+  <label class="sr-only">Last Name</label>
+  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+    <input class="form-control" type="text" name="lastname" placeholder="Last Name">
+  </div>
+</div>
+<hr>
+<!--
 <div class="form-group row">
   <label for="name-input" class="col-xs-2 col-form-label">Last Name</label>
   <div class="col-xs-5">
@@ -30,6 +42,7 @@ The training form
     <input class="form-control" type="text" value="" name="firstname" id="name-input">
   </div>
 </div>
+-->
 <div class="form-group row">
   <label for="number-presentation-input" class="col-xs-2 col-form-label">Number of presentations</label>
   <div class="col-xs-5">

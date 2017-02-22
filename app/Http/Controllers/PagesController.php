@@ -441,7 +441,7 @@ class PagesController extends Controller{
         $data->presenter = $fullName;
         $data->tot_participant = $numberParticipant;
         $data->date = $approxDate;
-       // $data->tot_presentation = $numberPresentation;
+        $data->tot_presentation = $numberPresentation;
         $data->location = $value;
 
         if($value == null){

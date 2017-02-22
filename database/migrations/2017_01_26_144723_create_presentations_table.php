@@ -15,10 +15,11 @@ class CreatePresentationsTable extends Migration
     {
         Schema::create('presentations', function (Blueprint $table) {
             $table->increments('id');                       //PK
-            $table->time('length');
             $table->string('presenter');
             $table->integer('tot_participant');
+            $table->integer('tot_presentation');
             $table->date('date');
+            $table->time('length');
             $table->integer('location')->unsigned();        //FK
             $table->timestamps();                           //cteated_at and updated_at
 
