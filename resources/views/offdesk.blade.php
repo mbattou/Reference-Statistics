@@ -39,11 +39,15 @@
  </form>
  <hr>
 </div>
+<!-- category reminder -->
+@include('definition')
+
 @endif
 
 <!-- External Calls -->
 <!--  jQuery -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
 <!-- Form validation errors -->
 @if(count($errors)>0)
 <div class="col-md-5">

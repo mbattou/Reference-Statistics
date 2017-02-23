@@ -37,7 +37,16 @@ These values are saves in the $cats variable and passed to both Get and Post vie
   @endfor
 <hr>
 </form>
-</div><!-- End Div from col-md-8 class -->
+</div>
+<!-- End Div from col-md-3 class -->
+
+<!-- empty div for adjustment -->
+<div class="col-md-4">
+counter=
+</div>
+<!-- category reminder -->
+@include('definition')
+
 @endif
 <!-- end of check if cookie is set or not -->
 @endsection
