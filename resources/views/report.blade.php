@@ -3,6 +3,6 @@
 @section('content')
 
 <h1>Report</h1>
-<p>This is the Report page!</p>
+<p>Coming soon!</p>
 
 @endsection

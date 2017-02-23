@@ -50,9 +50,6 @@ class PagesController extends Controller{
         return view('about');
     }
     */
-    public function getDemo(){
-        return view('demo');
-    }
     public function getDash(){
         $stats_data = [];
         $total_A = DB::table('posts')->where('category','=', 1)->count();

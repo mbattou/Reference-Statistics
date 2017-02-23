@@ -41,9 +41,7 @@ These values are saves in the $cats variable and passed to both Get and Post vie
 <!-- End Div from col-md-3 class -->
 
 <!-- empty div for adjustment -->
-<div class="col-md-4">
-counter=
-</div>
+<div class="col-md-4"></div>
 <!-- category reminder -->
 @include('definition')
 
