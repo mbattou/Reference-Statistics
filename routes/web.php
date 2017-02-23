@@ -30,3 +30,4 @@ Route::post('/training', 'PagesController@storeTraining');//store: insert into D
 Route::post('/setCookie', 'PagesController@setCookie');//setCookie: sets the cookie
 //testing routes
 Route::get('/test', 'PagesController@getTest');
+Route::post('/store', 'PagesController@store');

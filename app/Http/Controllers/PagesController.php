@@ -84,6 +84,20 @@ class PagesController extends Controller{
     public function getData(){
         return view('post');
     }
+    //to be deleted POST to test form validation
+    public function store(Request $request){
+        //form validation
+        $this->validate($request, [
+        'lastname' => 'nullable|alpha|max:3',
+        'firstname' => 'nullable|alpha|max:3',
+        'number-presentation' => 'required|numeric|digits_between:1,3',
+        'number-participant' => 'required|numeric|digits_between:1,3',
+        'date' => 'required|date',
+        'duration' => 'required|date_format:H:i',
+        ]);
+
+        return view('success');
+    }
     public function getTest(){
         $stats_data = [];
         $total_A = DB::table('posts')->where('category','=', 1)->count();
@@ -145,11 +159,17 @@ class PagesController extends Controller{
         $tot_A = $request->input('input-a');
         $tot_B = $request->input('input-b');
         $tot_C = $request->input('input-c');
+//form validation, limit entries to numerics less than 999
+        $this->validate($request, [
+          'input-a' => 'required|numeric|digits_between:1,3',  
+          'input-b' => 'required|numeric|digits_between:1,3',
+          'input-c' => 'required|numeric|digits_between:1,3',
+        ]);         
 //exceptions        
         if($value == null){
             return view('warning');
         }elseif (($tot_A == null && $tot_B == null && $tot_C == null) || ($tot_A == 0 && $tot_B == 0 && $tot_C == 0)){
-            return view('warning');
+            return view('error');
         }elseif(($tot_A == null && $tot_B == null && $tot_C != null) || ($tot_A == 0 && $tot_B == 0 && $tot_C != null)){
             if($tot_C > 1){
                 for($i=0; $i<$tot_C;$i++){
@@ -425,10 +445,21 @@ class PagesController extends Controller{
         return view('success');
     }
     public function storeTraining(Request $request){
-        $cats = Presentation::all();
         $name = 'LocationCookie';//cookie name
         $value = $request -> cookie($name);
+
         $data = new Presentation;
+
+        //form validation
+        $this->validate($request, [
+        'lastname' => 'nullable|alpha|max:15',
+        'firstname' => 'nullable|alpha|max:15',
+        'number-presentation' => 'required|numeric|digits_between:1,3',
+        'number-participant' => 'required|numeric|digits_between:1,3',
+        'date' => 'required|date',
+        'duration' => 'required|date_format:H:i',
+        ]);
+        //continue if passed validation, else throw exception
         $lastName = $request->input('lastname');
         $firstName = $request->input('firstname');
         $fullName = $firstName." ".$lastName;
@@ -443,13 +474,11 @@ class PagesController extends Controller{
         $data->date = $approxDate;
         $data->tot_presentation = $numberPresentation;
         $data->location = $value;
-
+        //make sure cookie didnt expire last moment
         if($value == null){
             return view('warning');
-        }elseif($numberPresentation == null || $numberParticipant == null || $approxDate == null || $approxDuration == null){
+        }elseif($numberPresentation <= 0 || $numberParticipant <= 0 ){ //form validation lets zero pass
             return view('error');
-    }elseif($numberPresentation == 0 || $numberParticipant == 0 || $approxDate == 0 || $approxDuration == 0){
-
     }else {
             $data->save();
         }
