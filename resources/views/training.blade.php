@@ -102,6 +102,7 @@ The training form
 @if(count($errors)>0)
 <div class="col-md-5">
 <div class="alert alert-danger">
+<strong>Attention!</strong>
     <ul>
     @foreach($errors->all() as $error)
      <li>{{$error}}</li>

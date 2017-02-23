@@ -63,14 +63,13 @@ This is the main page that will contain the common layout of the application
               <li class="dropdown">
               <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports <span class="caret"></span></a>
               <ul class="dropdown-menu" style="background-color:#DCDCDC"><!-- Light grey for the body background-->
-                <li><a href="/report">Report</a></li>
+                <li><a href="/report">Reports</a></li>
               </ul>
             </li>
             <!-- End of Reports Dropdown -->
             <!-- Nav bar ul-->
            <ul class="nav navbar-nav">
             <li><a href="/dash"><span class="glyphicon glyphicon-stats"></span> Dashboard</a></li>
-            <li><a href="/demo">Demo</a></li>
           </ul>
           <!-- End of nav bar ul-->
           </ul>
