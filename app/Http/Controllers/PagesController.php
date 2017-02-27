@@ -35,7 +35,22 @@ class PagesController extends Controller{
         return view('training');
     }
     public function getReport(){
-        return view('report');
+        $stats_data = [];
+        $total_A = DB::table('posts')->where('category','=', 1)->count();
+        $total_B = DB::table('posts')->where('category','=', 2)->count();
+        $total_C = DB::table('posts')->where('category','=', 3)->count();
+
+        $stats_data['total_A'] = $total_A;
+        $stats_data['total_B'] = $total_B;
+        $stats_data['total_C'] = $total_C;
+
+        $total_pres = DB::table('presentations')->where('tot_presentation', '>', 0)->sum('tot_presentation');
+        $total_part = DB::table('presentations')->where('tot_participant', '>', 0)->sum('tot_participant');
+
+        $stats_data['total_pres'] = $total_pres;
+        $stats_data['total_part'] = $total_part;
+
+        return view('report', ['stats_data'=>$stats_data]);
     }
    /*
     public function getContact(){
