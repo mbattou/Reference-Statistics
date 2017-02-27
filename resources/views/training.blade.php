@@ -1,3 +1,4 @@
+<!-- training, presentation and course view -->
 @extends('main')
 @section('title', 'Training')
 @section('content')
@@ -80,6 +81,9 @@ The training form
  </form>
  <hr>
 </div>
+<!-- training definitions reminder -->
+@include('def-training')
+
 @endif
 
 <!-- External Calls -->
