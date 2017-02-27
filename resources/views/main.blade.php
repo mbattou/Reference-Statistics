@@ -51,10 +51,10 @@ This is the main page that will contain the common layout of the application
             <li class="dropdown">
               <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Input Forms <span class="caret"></span></a>
               <ul class="dropdown-menu" style="background-color:#DCDCDC"><!-- Light grey for the body background-->
-                <li><a href="/ondesk">On Desk From</a></li>
-                 <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Quick Entry From</li>
+                <li><a href="/ondesk">On Desk From</a></li>              
+                 <li class="dropdown-header">Batch Entry Forms</li>   
                 <li><a href="/offdesk">Off Desk From</a></li>
-                <li role="separator" class="divider"></li>
                  <li><a href="/training">Training From</a></li>
               </ul>
             </li>
