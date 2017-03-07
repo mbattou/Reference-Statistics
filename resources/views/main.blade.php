@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <!-- 
-Auth:Mohamed Battou
-Date:22/12/2016
-This is the main page that will contain the common layout of the application
+This is the main page that will contain the common layout of the application pages
  -->
 <html lang="en">
   <head>
@@ -51,11 +49,11 @@ This is the main page that will contain the common layout of the application
             <li class="dropdown">
               <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Input Forms <span class="caret"></span></a>
               <ul class="dropdown-menu" style="background-color:#DCDCDC"><!-- Light grey for the body background-->
-                <li><a href="/ondesk">On Desk</a></li>              
+                <li><a href="/ondesk">Au Comptoir</a></li>              
                  <li role="separator" class="divider"></li>   
-                <li><a href="/offdesk">Off Desk</a></li>
+                <li><a href="/offdesk">Entrées Individuelles</a></li>
                 <li role="separator" class="divider"></li>
-                 <li><a href="/training">Training Form</a></li>
+                 <li><a href="/training">Présentations</a></li>
               </ul>
             </li>
             <!-- End of Forms Dropdown -->
@@ -70,6 +68,7 @@ This is the main page that will contain the common layout of the application
             <!-- Nav bar ul-->
            <ul class="nav navbar-nav">
             <li><a href="/dash"><span class="glyphicon glyphicon-stats"></span> Dashboard</a></li>
+            <li><a href="/faq"><span class="glyphicon glyphicon-question-sign"></span> FAQ</a></li>
           </ul>
           <!-- End of nav bar ul-->
           </ul>

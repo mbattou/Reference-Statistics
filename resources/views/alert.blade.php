@@ -6,9 +6,9 @@
 <!-- SUCCESS ALERT -->
 <div class="col-md-6">
 <div class="alert alert-success">
-Submit <a href="/ondesk" class="alert-link">individual statistics</a><br/>
-Submit <a href="/offdesk" class="alert-link">batch statistics</a><br/>
-Submit <a href="/training" class="alert-link">batch trainings, presentations and courses statistics</a>
+<a href="/ondesk" class="alert-link">Au Comptoir - On Desk</a><br/>
+<a href="/offdesk" class="alert-link">Entrées Individuelles - Individual Entries</a><br/>
+<a href="/training" class="alert-link">Présentations - Presentations</a>
 </div>
 </div>
 @endsection

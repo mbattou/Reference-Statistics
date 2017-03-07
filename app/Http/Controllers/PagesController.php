@@ -34,6 +34,9 @@ class PagesController extends Controller{
     public function getTraining(){
         return view('training');
     }
+    public function getFaq(){
+        return view('faq');
+    }
     public function getReport(){
         $stats_data = [];
         $total_A = DB::table('posts')->where('category','=', 1)->count();
@@ -52,7 +55,7 @@ class PagesController extends Controller{
 
         return view('report', ['stats_data'=>$stats_data]);
     }
-    
+
     public function getDash(){
         $stats_data = [];
         $total_A = DB::table('posts')->where('category','=', 1)->count();
