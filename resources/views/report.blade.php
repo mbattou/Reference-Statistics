@@ -19,6 +19,7 @@
          <option value="0">Now</option>
     </select>
   </div>
+  <button type="submit" class="btn btn-primary">Run</button>
   </div>
   <!-- Table -->
 <div class="col-md-6">

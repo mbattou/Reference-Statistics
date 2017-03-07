@@ -73,7 +73,7 @@ The training form
         <div class="input-group-addon">
          <i class="glyphicon glyphicon-time"></i>
         </div>
-        <input class="form-control" type="text" value="01:30" name="duration" id="duration"/>
+        <input class="form-control" type="text" value="00:00" name="duration" id="duration"/>
        </div>
       </div>
      </div>

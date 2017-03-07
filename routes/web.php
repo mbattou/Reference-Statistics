@@ -17,8 +17,6 @@ Route::get('/ondesk',   'PagesController@getOndesk');
 Route::get('/offdesk',  'PagesController@getOffdesk');
 Route::get('/training', 'PagesController@getTraining');
 Route::get('/report',   'PagesController@getReport');
-//Route::get('/contact',  'PagesController@getContact');
-//Route::get('/about',    'PagesController@getAbout');
 Route::get('/dash',     'PagesController@getDash');
 Route::get('/store',    'PagesController@getData');
 ROUTE::get('/clear',    'PagesController@clearCookie');

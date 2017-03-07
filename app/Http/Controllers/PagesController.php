@@ -52,19 +52,7 @@ class PagesController extends Controller{
 
         return view('report', ['stats_data'=>$stats_data]);
     }
-   /*
-    public function getContact(){
-        $email = 'bibnet@uottawa.ca';
-        $admin = "Library Systems";
-        $data = [];
-        $data['email'] = $email;
-        $data['admin'] = $admin;
-        return view('contact')->withData($data);
-    }
-    public function getAbout(){
-        return view('about');
-    }
-    */
+    
     public function getDash(){
         $stats_data = [];
         $total_A = DB::table('posts')->where('category','=', 1)->count();
