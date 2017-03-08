@@ -209,6 +209,34 @@
       </div>
     </div>
   </div>
+    <!-- EZproxy session 30 minutes inactivity -->
+    <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title" style="color:#8f001a">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+        EZprozy login expires after 30 minutes of inactivity</a>
+      </h4>
+    </div>
+    <div id="collapse6" class="panel-collapse collapse">
+      <div class="panel-body">
+    Text goes here - A suivre!
+      </div>
+    </div>
+  </div>
+<!-- Reset location cookie -->
+    <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title" style="color:#8f001a">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+        Reset your location cookie?</a>
+      </h4>
+    </div>
+    <div id="collapse7" class="panel-collapse collapse">
+      <div class="panel-body">
+    Text goes here - A suivre!
+      </div>
+    </div>
+  </div>
   <!---->
 </div> <!-- end if accordion div -->
 </div> <!-- end if col-md-10 -->
