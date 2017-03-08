@@ -30,20 +30,6 @@ The training form
        </small>
 </div>
 <hr>
-<!--
-<div class="form-group row">
-  <label for="name-input" class="col-xs-2 col-form-label">Last Name</label>
-  <div class="col-xs-5">
-    <input class="form-control" type="text" value="" name="lastname" id="name-input">
-  </div>
-</div>
-<div class="form-group row">
-  <label for="name-input" class="col-xs-2 col-form-label">First Name</label>
-  <div class="col-xs-5">
-    <input class="form-control" type="text" value="" name="firstname" id="name-input">
-  </div>
-</div>
--->
 <div class="form-group row">
   <label for="number-presentation-input" class="col-xs-2 col-form-label">Number of presentations</label>
   <i class="text-danger">*</i>

@@ -2,18 +2,27 @@
 @section('title', 'Off Desk')
 @section('content')
 
-<h1>Off-Desk Form</h1>
+<h1>Entrées Individuelles - Individual Entries</h1>
 @if(app('request')->cookie('LocationCookie') == null)
   @include('no-location')
 <!-- stats side bar -->
   @include('sidebar')
 @else
 <div class="col-md-7">
-<hr>
-<h3>Submit batch of stats</h3>
-<hr>
  <form action="offdesk" method="POST">
   {!! csrf_field() !!} <!-- protect form from cross site forgery -->
+  <hr>
+<div class="form-inline">
+  <label class="sr-only" >First Name</label>
+  <input type="text" class="form-control" name="firstname" placeholder="First Name">
+
+  <label class="sr-only">Last Name</label>
+    <input type="text" class="form-control" name="lastname" placeholder="Last Name">
+       <small id="asterix" class="text-muted text-success">
+      First and Last name are optional.
+       </small>
+</div>
+<hr>
 <div class="form-group row">
   <label for="input-a" class="col-xs-2 col-form-label">Number of "A"</label>
   <i class="text-danger">*</i>

@@ -19,7 +19,7 @@ These values are saves in the $cats variable and passed to both Get and Post vie
   you will end up with A, B, C and D. 
   another option will be to hard-code the cats as suggested in previous comments.
 -->
-<h1>On-Desk Form</h1>
+<h1>Au Comptoir - On Desk</h1>
 
 <!-- check if cookie is set or not -->
 @if(app('request')->cookie('LocationCookie') == null)
@@ -27,7 +27,7 @@ These values are saves in the $cats variable and passed to both Get and Post vie
 <!-- stats side bar -->
  @include('sidebar')
  @else
- <p>Simply press on a category to submit</p>
+ <p>Appuyez sur le bouton de la catégorie voulue (ex: « A ») pour soumettre.<br/> Simply press on the desired category button (ie. "A") to submit.</p>
 <div class="col-md-3"> <!-- to centre: col-md-4 col-md-offset-4 -->
 <form action="ondesk" method="POST">
     {!! csrf_field() !!} <!-- protect form from cross site forgery -->
