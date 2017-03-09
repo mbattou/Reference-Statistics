@@ -20,7 +20,7 @@ class PagesController extends Controller{
 *Get Functions
 */       
     public function getIndex(){
-        $locations = Location::all();
+        $locations = Location::where('id','>=', 1)->orderBy('id', 'asc')->get();
         return view('welcome', ['locations'=>$locations]);
     }
     public function getOndesk(){
@@ -144,7 +144,6 @@ class PagesController extends Controller{
         $posts_data_a = new Post; //new temp model instance
         $posts_data_b = new Post; //new temp model instance
         $posts_data_c = new Post; //new temp model instance
-        $presentations_data = new Presentation ;
 //cats  A B C      
         $A = 1;
         $B = 2;
@@ -158,7 +157,9 @@ class PagesController extends Controller{
         $posts_data_b->location = $value;
         $posts_data_c->location = $value;
 //form
-        //$organizer = $request['name-input'];
+       /* $first_name = $request->input('firstname');
+        $last_name = $request->input('lastname');
+        $person = $first_name." ".$lastName;*/
         $tot_A = $request->input('input-a');
         $tot_B = $request->input('input-b');
         $tot_C = $request->input('input-c');
