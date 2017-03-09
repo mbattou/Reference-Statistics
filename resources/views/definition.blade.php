@@ -5,7 +5,7 @@
 -->
 <div class="col-md-5">
 <div class="alert alert-info">
-  <strong>Definitions</strong><br/>
+  <strong>Définitions - Definitions</strong><br/>
   <ul>
   <li><strong>A - Questions d'informations générales</strong>: Donnez des renseignements généraux aux utilisateurs.</li>
   <li><strong>B - Questions de recherche bibliographique</strong>: Aidez les utilisateurs à trouver des documents de la Bibliothèque.</li>

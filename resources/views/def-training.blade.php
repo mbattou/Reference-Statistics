@@ -6,7 +6,7 @@
 -->
 <div class="col-md-5">
 <div class="alert alert-info">
-  <strong>Definitiones</strong><br/>
+  <strong>Définitions - Definitions</strong><br/>
   <ul>
   <li><strong>Nombre de présentations de groupe</strong>: Présentations en classe, formations, séances d'orientation et visites guidées.</li>
   <li><strong>Nombre de participant aux présentations de groupe</strong>: Compter chaque personne une seule fois, meme dans le cas des 
