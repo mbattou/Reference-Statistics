@@ -214,7 +214,7 @@
     <div class="panel-heading">
       <h4 class="panel-title" style="color:#8f001a">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
-        EZprozy login expires after 30 minutes of inactivity</a>
+        EZproxy login expires after 30 minutes of inactivity</a>
       </h4>
     </div>
     <div id="collapse6" class="panel-collapse collapse">
