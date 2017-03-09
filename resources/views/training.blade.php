@@ -5,8 +5,7 @@
 <!-- 
 The training form
 -->
-<h1>Presentations - Training - Courses Form</h1>
-
+<h1>Présentations - Presentations</h1>
 <!-- check if cookie is set or not -->
 @if(app('request')->cookie('LocationCookie') == null)
  @include('no-location')
@@ -16,9 +15,7 @@ The training form
 <div class="col-md-7">
  <form action="training" method="POST">
   {!! csrf_field() !!} <!-- protect form from cross site forgery -->
-<hr>
-<h3>Submit batch of stats</h3>
-<hr>
+  <hr>
 <div class="form-inline">
   <label class="sr-only" >First Name</label>
   <input type="text" class="form-control" name="firstname" placeholder="First Name">
