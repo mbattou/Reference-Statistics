@@ -211,10 +211,20 @@ class PagesController extends Controller{
                     $posts_data_b = new Post; //new temp model instance
                     $posts_data_b->category = $B;
                     $posts_data_b->location = $value;
+                     if($fullName != null){
+                    $posts_data_b->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_b->save();
                 }
             }else {
                 $posts_data_b->category = $B;
+                    if($fullName != null){
+                    $posts_data_b->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_b->save();
             }
         }elseif(($tot_A == null && $tot_B != null && $tot_C != null) || ($tot_A == 0 && $tot_B != null && $tot_C != null)){
@@ -223,12 +233,22 @@ class PagesController extends Controller{
                     $posts_data_b = new Post; //new temp model instance
                     $posts_data_b->category = $B;
                     $posts_data_b->location = $value;
+                    if($fullName != null){
+                    $posts_data_b->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_b->save();
                 }
                 for($i=0; $i<$tot_C; $i++){
                     $posts_data_c = new Post; //new temp model instance
                     $posts_data_c->category = $C;
                     $posts_data_c->location = $value;
+                    if($fullName != null){
+                    $posts_data_c->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_c->save();
                 }
             }elseif($tot_B > 1 && $tot_C <= 1){
@@ -236,24 +256,54 @@ class PagesController extends Controller{
                     $posts_data_b = new Post; //new temp model instance
                     $posts_data_b->category = $B;
                     $posts_data_b->location = $value;
+                    if($fullName != null){
+                    $posts_data_b->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_b->save();
                 }
                 $posts_data_c->category = $C;
+                    if($fullName != null){
+                    $posts_data_c->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_c->save();
             }elseif($tot_B <= 1 && $tot_C > 1){
                 for($i=0; $i<$tot_C; $i++){
                     $posts_data_c = new Post; //new temp model instance
                     $posts_data_c->category = $C;
                     $posts_data_c->location = $value;
+                    if($fullName != null){
+                    $posts_data_c->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_c->save();
                 }
                 $posts_data_b->category = $B;
+                    if($fullName != null){
+                    $posts_data_b->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_b->save();
             }else {
                 $posts_data_b->category = $B;
+                    if($fullName != null){
+                    $posts_data_b->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_b->save();
 
                 $posts_data_c->category = $C;
+                    if($fullName != null){
+                    $posts_data_c->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_c->save();
             }
         }elseif(($tot_A != null && $tot_B == null && $tot_C == null) || ($tot_A != null && $tot_B == 0 && $tot_C == 0)){
@@ -262,10 +312,20 @@ class PagesController extends Controller{
                     $posts_data_a = new Post; //new temp model instance
                     $posts_data_a->category = $A;
                     $posts_data_a->location = $value;
+                    if($fullName != null){
+                    $posts_data_a->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_a->save();
                 }
             }else{
                     $posts_data_a->category = $A;
+                    if($fullName != null){
+                    $posts_data_a->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_a->save();
             }
         }elseif(($tot_A != null && $tot_B == null && $tot_C != null) || ($tot_A != null && $tot_B == 0 && $tot_C != null)){
@@ -274,12 +334,22 @@ class PagesController extends Controller{
                     $posts_data_a = new Post; //new temp model instance
                     $posts_data_a->category = $A;
                     $posts_data_a->location = $value;
+                    if($fullName != null){
+                    $posts_data_a->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_a->save();
                 }
                 for($i=0; $i<$tot_C; $i++){
                     $posts_data_c = new Post; //new temp model instance
                     $posts_data_c->category = $C;
                     $posts_data_c->location = $value;
+                    if($fullName != null){
+                    $posts_data_c->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_c->save();
                 }
             }elseif($tot_A > 1 && $tot_C <= 1){
@@ -287,24 +357,54 @@ class PagesController extends Controller{
                     $posts_data_a = new Post; //new temp model instance
                     $posts_data_a->category = $A;
                     $posts_data_a->location = $value;
+                    if($fullName != null){
+                    $posts_data_a->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_a->save();
                 }
                 $posts_data_c->category = $C;
+                    if($fullName != null){
+                    $posts_data_c->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_c->save();
             }elseif($tot_A <= 1 && $tot_C > 1){
                 for($i=0; $i<$tot_C; $i++){
                     $posts_data_c = new Post; //new temp model instance
                     $posts_data_c->category = $C;
                     $posts_data_c->location = $value;
+                    if($fullName != null){
+                    $posts_data_c->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_c->save();
                 }
                 $posts_data_a->category = $A;
+                    if($fullName != null){
+                    $posts_data_a->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_a->save();
             }else {
                 $posts_data_a->category = $A;
+                    if($fullName != null){
+                    $posts_data_a->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_a->save();
 
                 $posts_data_c->category = $C;
+                    if($fullName != null){
+                    $posts_data_c->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_c->save();
             }
         }elseif(($tot_A != null && $tot_B != null && $tot_C == null) || ($tot_A != null && $tot_B != null && $tot_C == 0)){
@@ -313,12 +413,22 @@ class PagesController extends Controller{
                     $posts_data_a = new Post; //new temp model instance
                     $posts_data_a->category = $A;
                     $posts_data_a->location = $value;
+                    if($fullName != null){
+                    $posts_data_a->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_a->save();
                 }
                 for($i=0; $i<$tot_B; $i++){
                     $posts_data_b = new Post; //new temp model instance
                     $posts_data_b->category = $B;
                     $posts_data_b->location = $value;
+                    if($fullName != null){
+                    $posts_data_b->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_b->save();
                 }
             }elseif($tot_A > 1 && $tot_B <= 1){
@@ -326,35 +436,80 @@ class PagesController extends Controller{
                     $posts_data_a = new Post; //new temp model instance
                     $posts_data_a->category = $A;
                     $posts_data_a->location = $value;
+                    if($fullName != null){
+                    $posts_data_a->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_a->save();
                 }
                 $posts_data_b->category = $B;
+                    if($fullName != null){
+                    $posts_data_b->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_b->save();
             }elseif($tot_A <= 1 && $tot_B > 1){
                 for($i=0; $i<$tot_B; $i++){
                     $posts_data_b = new Post; //new temp model instance
                     $posts_data_b->category = $B;
                     $posts_data_b->location = $value;
+                    if($fullName != null){
+                    $posts_data_b->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_b->save();
                 }
                 $posts_data_a->category = $A;
+                    if($fullName != null){
+                    $posts_data_a->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_a->save();
             }else {
                 $posts_data_a->category = $A;
+                    if($fullName != null){
+                    $posts_data_a->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_a->save();
 
                 $posts_data_b->category = $B;
+                    if($fullName != null){
+                    $posts_data_b->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_b->save();
             }
         }elseif($tot_A != null && $tot_B != null && $tot_C != null){
             if($tot_A == 1 && $tot_B == 1 && $tot_C ==  1){
                 $posts_data_a->category = $A;
+                    if($fullName != null){
+                    $posts_data_a->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_a->save();
 
                 $posts_data_b->category = $B;
+                    if($fullName != null){
+                    $posts_data_b->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_b->save();
 
-                $posts_data_c->category = $C;          
+                $posts_data_c->category = $C; 
+                    if($fullName != null){
+                    $posts_data_c->person = $fullName;
+                    }else{
+                        //do nothing
+                    }         
                 $posts_data_c->save();
 
             }elseif($tot_A == 1 && $tot_B == 1 && $tot_C > 1){
@@ -362,39 +517,84 @@ class PagesController extends Controller{
                     $posts_data_c = new Post;
                     $posts_data_c->category = $C;
                     $posts_data_c->location = $value;
+                    if($fullName != null){
+                    $posts_data_c->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_c->save();
                 }
                 $posts_data_a->category = $A;
+                    if($fullName != null){
+                    $posts_data_a->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_a->save();
 
                 $posts_data_b->category = $B;
+                    if($fullName != null){
+                    $posts_data_b->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_b->save();
             }elseif($tot_A == 1 && $tot_B > 1 && $tot_C == 1){
                 for($i=0; $i<$tot_B; $i++){
                     $posts_data_b = new Post;
                     $posts_data_b->category = $B;
                     $posts_data_b->location = $value;
+                    if($fullName != null){
+                    $posts_data_b->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_b->save();
                 }
                 $posts_data_a->category = $A;
+                    if($fullName != null){
+                    $posts_data_a->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_a->save();
 
                 $posts_data_c->category = $C;
+                    if($fullName != null){
+                    $posts_data_c->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_c->save();
             }elseif($tot_A == 1 && $tot_B > 1 &&  $tot_C > 1){
                 for($i=0; $i<$tot_B; $i++){
                     $posts_data_b = new Post;
                     $posts_data_b->category = $B;
                     $posts_data_b->location = $value;
+                    if($fullName != null){
+                    $posts_data_b->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_b->save();
                 }
                 for($i=0; $i<$tot_C; $i++){
                     $posts_data_c = new Post;
                     $posts_data_c->category = $C;
                     $posts_data_c->location = $value;
+                    if($fullName != null){
+                    $posts_data_c->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_c->save();
                 }
                 $posts_data_a->category = $A;
+                    if($fullName != null){
+                    $posts_data_a->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_a->save();
 
             }elseif($tot_A > 1 && $tot_B == 1 && $tot_C == 1){ 
@@ -402,60 +602,120 @@ class PagesController extends Controller{
                     $posts_data_a = new Post;
                     $posts_data_a->category = $A;
                     $posts_data_a->location = $value;
+                    if($fullName != null){
+                    $posts_data_a->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_a->save();
                 }
                 $posts_data_b->category = $B;
+                    if($fullName != null){
+                    $posts_data_b->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_b->save();
 
                 $posts_data_c->category = $C;
+                    if($fullName != null){
+                    $posts_data_c->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_c->save();
             }elseif($tot_A > 1 && $tot_B == 1 && $tot_C > 1){
                 for($i=0; $i<$tot_A; $i++){
                     $posts_data_a = new Post;
                     $posts_data_a->category = $A;
                     $posts_data_a->location = $value;
+                    if($fullName != null){
+                    $posts_data_a->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_a->save();
                 }
                 for($i=0; $i<$tot_C; $i++){
                     $posts_data_c = new Post;
                     $posts_data_c->category = $C;
                     $posts_data_c->location = $value;
+                    if($fullName != null){
+                    $posts_data_c->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_c->save();
                 }
                 $posts_data_b->category = $B;
+                    if($fullName != null){
+                    $posts_data_b->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_b->save();
             }elseif($tot_A > 1 && $tot_B > 1 && $tot_C == 1){// check the loop
                  for($i=0; $i<$tot_A; $i++){
                     $posts_data_a = new Post;
                     $posts_data_a->category = $A;
                     $posts_data_a->location = $value;
+                    if($fullName != null){
+                    $posts_data_a->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_a->save();
                 }
                 for($i=0; $i<$tot_B; $i++){
                     $posts_data_b = new Post;
                     $posts_data_b->category = $B;
                     $posts_data_b->location = $value;
+                    if($fullName != null){
+                    $posts_data_b->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_b->save();
                 }
                 $posts_data_c->category = $C;
+                    if($fullName != null){
+                    $posts_data_c->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_c->save();
         }elseif($tot_A > 1 && $tot_B > 1 && $tot_C > 1){
                 for($i=0; $i<$tot_A; $i++){
                     $posts_data_a = new Post;
                     $posts_data_a->category = $A;
                     $posts_data_a->location = $value;
+                    if($fullName != null){
+                    $posts_data_a->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_a->save();
                 } 
                 for($i=0; $i<$tot_B; $i++){
                     $posts_data_b = new Post;
                     $posts_data_b->category = $B;
                     $posts_data_b->location = $value;
+                    if($fullName != null){
+                    $posts_data_b->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_b->save();
                 }
                 for($i=0; $i<$tot_C; $i++){
                     $posts_data_c = new Post;
                     $posts_data_c->category = $C;
                     $posts_data_c->location = $value;
+                    if($fullName != null){
+                    $posts_data_c->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_c->save();
                 }
         }else{
