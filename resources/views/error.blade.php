@@ -1,5 +1,5 @@
 @extends('main')
-@section('title', 'Success')
+@section('title', 'Error')
 @section('content')
 
 <br/><br/>
