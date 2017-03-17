@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->integer('subcategory')->nullable()->unsigned();     //FK
             $table->integer('location')->unsigned();                    //
             $table->string('person');      
-            $table->integer('code')->nullable()->unsigned();            //FK, check if it should be nullable
+            //$table->integer('code')->nullable()->unsigned();            //FK, check if it should be nullable
             $table->timestamps();                                       //created_at and updated_at
                     
             //FK Constraints:

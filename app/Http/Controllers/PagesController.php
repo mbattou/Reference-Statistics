@@ -147,7 +147,7 @@ class PagesController extends Controller{
 */     
     public function storeOffDesk(Request $request){
 //Models
-        $posts_data = new Post;
+       // $posts_data = new Post;
         $posts_data_a = new Post; //new temp model instance
         $posts_data_b = new Post; //new temp model instance
         $posts_data_c = new Post; //new temp model instance
@@ -159,19 +159,21 @@ class PagesController extends Controller{
         $name = 'LocationCookie';
         $value = $request -> cookie($name);  
         //used for single DB entry     
-        $posts_data->location = $value;
+        //$posts_data->location = $value;
         $posts_data_a->location = $value;
         $posts_data_b->location = $value;
         $posts_data_c->location = $value;
 //form
-       /* $first_name = $request->input('firstname');
-        $last_name = $request->input('lastname');
-        $person = $first_name." ".$lastName;*/
+        $firstName = $request->input('firstname');
+        $lastName = $request->input('lastname');
+        $fullName = $firstName." ".$lastName;
         $tot_A = $request->input('input-a');
         $tot_B = $request->input('input-b');
         $tot_C = $request->input('input-c');
-//form validation, limit entries to numerics less than 999
+//form validation, limit entries to numerics less than 999 and check first & last name
         $this->validate($request, [
+          'lastname' => 'nullable|alpha|max:15',
+          'firstname' => 'nullable|alpha|max:15',
           'input-a' => 'nullable|numeric|digits_between:1,3',  
           'input-b' => 'nullable|numeric|digits_between:1,3',
           'input-c' => 'nullable|numeric|digits_between:1,3',
@@ -187,10 +189,20 @@ class PagesController extends Controller{
                     $posts_data_c = new Post; //new temp model instance
                     $posts_data_c->category = $C;
                     $posts_data_c->location = $value;
+                    if($fullName != null){
+                    $posts_data_c->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                     $posts_data_c->save();
                 }
             }else{
                 $posts_data_c->category = $C;
+                    if($fullName != null){
+                    $posts_data_c->person = $fullName;
+                    }else{
+                        //do nothing
+                    }
                 $posts_data_c->save();
             }
         }elseif(($tot_A == null && $tot_B != null && $tot_C == null) || ($tot_A == 0 && $tot_B != null && $tot_C == 0)){
