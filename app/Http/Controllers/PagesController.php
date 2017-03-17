@@ -492,8 +492,9 @@ class PagesController extends Controller{
         $name = 'LocationCookie';
         //if you are getting the value from input box simply use: $value = $request['location'] where location is the name of the input field
         $value = $request->input('locationID');//getting the selected value from the dropdown menu
-        $life = 60;//to be reviewded 
-        $cookie = cookie($name,$value,$life);
+        //$life = 60; //cookie expires in 1 hour
+        //$cookie = cookie($name,$value,$life); //set the cookie for the specified life time
+        $cookie = cookie()->forever($name,$value); //set cookie forever aka five years
         return response()->view('alert')->withCookie($cookie);
     }
 /*
