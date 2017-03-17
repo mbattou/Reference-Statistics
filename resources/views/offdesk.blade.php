@@ -25,21 +25,18 @@
 <hr>
 <div class="form-group row">
   <label for="input-a" class="col-xs-2 col-form-label">Number of "A"</label>
-  <i class="text-danger">*</i>
   <div class="col-xs-5">
     <input class="form-control" type="number" name="input-a" min="0">
   </div>
   </div>
   <div class="form-group row">
   <label for="input-b" class="col-xs-2 col-form-label">Number of "B"</label>
-  <i class="text-danger">*</i>
   <div class="col-xs-5">
     <input class="form-control" type="number" name="input-b" min="0">
   </div>
   </div>
   <div class="form-group row">
   <label for="input-c" class="col-xs-2 col-form-label">Number of "C"</label>
-  <i class="text-danger">*</i>
   <div class="col-xs-5">
     <input class="form-control" type="number" name="input-c" min="0">
   </div>

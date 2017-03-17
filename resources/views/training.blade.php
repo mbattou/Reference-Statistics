@@ -43,14 +43,12 @@ The training form
 </div>
 <div class="form-group row">
   <label for="date-input" class="col-xs-2 col-form-label">Approximate Date</label>
-    <i class="text-danger">*</i>
   <div class="col-xs-5">
     <input class="form-control" type="date" value="today" name="date" id="date-input">
   </div>
 </div>
     <div class="form-group row">
       <label class="col-xs-2 col-form-label" data-placement="left" data-align="top" data-autoclose="true">Approximate Duration</label>
-      <i class="text-danger">*</i>
       <div class="col-xs-5">
        <div class="input-group clockpicker">
         <div class="input-group-addon">

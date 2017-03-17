@@ -118,7 +118,11 @@ class PagesController extends Controller{
     }
 /*
 *Post Functions
-*/    
+*/   
+
+/*
+*Store on desk form data
+*/ 
     public function storeOnDesk(Request $request){
         $cats = Cat::all();
         $name = 'LocationCookie';//cookie name
@@ -138,6 +142,9 @@ class PagesController extends Controller{
         //send the cats to the post view as well to be able to display them
         return view('ondesk')->withCats($cats);
     }
+/*
+*Store off desk form data
+*/     
     public function storeOffDesk(Request $request){
 //Models
         $posts_data = new Post;
@@ -165,9 +172,9 @@ class PagesController extends Controller{
         $tot_C = $request->input('input-c');
 //form validation, limit entries to numerics less than 999
         $this->validate($request, [
-          'input-a' => 'required|numeric|digits_between:1,3',  
-          'input-b' => 'required|numeric|digits_between:1,3',
-          'input-c' => 'required|numeric|digits_between:1,3',
+          'input-a' => 'nullable|numeric|digits_between:1,3',  
+          'input-b' => 'nullable|numeric|digits_between:1,3',
+          'input-c' => 'nullable|numeric|digits_between:1,3',
         ]);         
 //exceptions        
         if($value == null){
@@ -448,6 +455,9 @@ class PagesController extends Controller{
         }      
         return view('success');
     }
+/*
+*Store presentations and training form data
+*/    
     public function storeTraining(Request $request){
         $name = 'LocationCookie';//cookie name
         $value = $request -> cookie($name);
@@ -460,8 +470,8 @@ class PagesController extends Controller{
         'firstname' => 'nullable|alpha|max:15',
         'number-presentation' => 'required|numeric|digits_between:1,3',
         'number-participant' => 'required|numeric|digits_between:1,3',
-        'date' => 'required|date',
-        'duration' => 'required|date_format:H:i',
+        'date' => 'nullable|date',
+        'duration' => 'nullable|date_format:H:i',
         ]);
         //continue if passed validation, else throw exception
         $lastName = $request->input('lastname');
@@ -469,7 +479,12 @@ class PagesController extends Controller{
         $fullName = $firstName." ".$lastName;
         $numberPresentation = $request->input('number-presentation');
         $numberParticipant = $request->input('number-participant');
-        $approxDate = $request->input('date');
+        //check if date is null as it is not required, if null, set it to today
+        if($request->input('date') == null){
+            $approxDate = Carbon::today()->toDateString(); //use todays date instead
+        }else {
+            $approxDate = $request->input('date');
+        }
         $approxDuration = $request->input('duration');
         //put data together
         $data->length = $approxDuration;
@@ -488,6 +503,9 @@ class PagesController extends Controller{
         }
         return view('success');
     }
+/*
+*Set cookie method
+*/    
     public function setCookie(Request $request){
         $name = 'LocationCookie';
         //if you are getting the value from input box simply use: $value = $request['location'] where location is the name of the input field
