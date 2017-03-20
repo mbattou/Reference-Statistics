@@ -24,8 +24,8 @@ class PagesController extends Controller{
         return view('welcome', ['locations'=>$locations]);
     }
     public function getOndesk(){
-        $cats = Cat::all();
-        //passing posts values for the sidebar on ondesk form
+        $cats = Cat::where('status','=',1)->get();
+        //passing cats values to on ondesk form
         return view('ondesk')->withCats($cats);
     }
     public function getOffdesk(){

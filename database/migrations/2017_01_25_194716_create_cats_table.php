@@ -16,6 +16,7 @@ class CreateCatsTable extends Migration
         Schema::create('cats', function (Blueprint $table) {
             $table->increments('id');                                //PK
             $table->string('categoryname');                          //category name
+            $table->integer('status');                               //is cat active or not
             $table->string('categorydesc')->nullable();              //category description
         });
     }
