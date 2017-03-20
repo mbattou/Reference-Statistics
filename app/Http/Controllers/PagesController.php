@@ -11,6 +11,7 @@ use App\Post; //call the Post model
 use App\Location; //call the Location Model
 use App\Cat; //call the Cat Model
 use App\Presentation; //call the Presentation Model
+use App\User; //call the User Model
 use Illuminate\Http\Request;//using Http request
 use DB; //use query builder DB facade
 use Carbon\Carbon; //get current timestamp for query builder whereBetween
@@ -24,7 +25,7 @@ class PagesController extends Controller{
         return view('welcome', ['locations'=>$locations]);
     }
     public function getOndesk(){
-        $cats = Cat::where('status','=',1)->get();
+        $cats = Cat::where('status','=', 1)->get();
         //passing cats values to on ondesk form
         return view('ondesk')->withCats($cats);
     }
@@ -38,6 +39,9 @@ class PagesController extends Controller{
         return view('faq');
     }
     public function getReport(){
+        //gather users data
+        $users = User::where('status','=', 1)->get();
+        //gather stats data
         $stats_data = [];
         $total_A = DB::table('posts')->where('category','=', 1)->count();
         $total_B = DB::table('posts')->where('category','=', 2)->count();
@@ -53,7 +57,7 @@ class PagesController extends Controller{
         $stats_data['total_pres'] = $total_pres;
         $stats_data['total_part'] = $total_part;
 
-        return view('report', ['stats_data'=>$stats_data]);
+        return view('report', ['stats_data'=>$stats_data, 'users'=>$users]);
     }
 
     public function getDash(){

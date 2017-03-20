@@ -61,5 +61,21 @@
   </tbody>
 </table>
 </div>
-
+<!-- run user centric statistics -->
+<p><strong>Run statistics for a user</strong></p>
+<!-- importing users from the DB -->
+<div class="col-md-12">
+<label for="location-input" class="col-xs-2 col-form-label">Your name</label>
+<div class="col-xs-3">
+    <select class="form-control" id="user-name" name="username">
+@for ($i=0; $i<count($users); $i++)
+{{ $name=$users[$i]['name'] }}
+<option value="{{$name}}">{{ $name }}</option>
+@endfor
+    </select>
+  </div>
+    <button type="submit" class="btn btn-primary btn-md" value="submit">Submit</button>
+</div>
+</div><!-- End col div -->
+<!-- End users import -->
 @endsection
