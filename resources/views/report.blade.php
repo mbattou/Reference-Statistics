@@ -3,6 +3,7 @@
 @section('content')
 
 <h1>Reports</h1>
+<hr>
 <br/>
 <div class="form-group row">
 <!-- FROM -->
@@ -61,12 +62,13 @@
   </tbody>
 </table>
 </div>
+</div><!-- end of col div -->
 <!-- run user centric statistics -->
-<p><strong>Run statistics for a user</strong></p>
 <!-- importing users from the DB -->
-<div class="col-md-12">
-<label for="location-input" class="col-xs-2 col-form-label">Your name</label>
-<div class="col-xs-3">
+<div class="col-md-6">
+<hr>
+<label for="location-input" class="col-xs-2 col-form-label col-md-offset-1">Your name</label>
+<div class="col-md-4">
     <select class="form-control" id="user-name" name="username">
 @for ($i=0; $i<count($users); $i++)
 {{ $name=$users[$i]['name'] }}
@@ -74,7 +76,33 @@
 @endfor
     </select>
   </div>
-    <button type="submit" class="btn btn-primary btn-md" value="submit">Submit</button>
+    <button type="submit" class="btn btn-primary btn-md" value="submit">Run</button>
+</div><!-- End col div -->
+<div class="col-md-6">
+<hr>
+<!-- Table -->
+<table class="table">
+  <thead class="table table-inverse">
+    <tr>
+      <th>#</th>
+      <th>Total A</th>
+      <th>Total B</th>
+      <th>Total C</th>
+      <th>Total Presentations</th>
+      <th>Total Participants</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{ $stats_data['total_A'] }}</td><!-- to be replaced by real user corresponding values -->
+      <td>{{ $stats_data['total_B'] }}</td><!-- to be replaced by real user corresponding values -->
+      <td>{{ $stats_data['total_C'] }}</td><!-- to be replaced by real user corresponding values -->
+      <td>{{ $stats_data['total_pres'] }}</td><!-- to be replaced by real user corresponding values -->
+      <td>{{ $stats_data['total_part'] }}</td><!-- to be replaced by real user corresponding values -->
+    </tr>
+  </tbody>
+</table>
 </div>
 </div><!-- End col div -->
 <!-- End users import -->

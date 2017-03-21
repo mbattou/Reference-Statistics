@@ -12,7 +12,7 @@
     <div class="panel-heading">
       <h4 class="panel-title" style="color:#8f001a"><!-- UO Garnet-->
         <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-        Questions d'informations générales - General Information Questions (aka A)</a>
+        Questions d'informations générales - General Information Questions</a>
       </h4>
     </div>
     <div id="collapse1" class="panel-collapse collapse">
@@ -54,7 +54,7 @@
     <div class="panel-heading">
       <h4 class="panel-title" style="color:#8f001a">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-        Questions de recherhce bibliographique - Bibliographic Questions (aka B)</a>
+        Questions de recherhce bibliographique - Bibliographic Questions</a>
       </h4>
     </div>
     <div id="collapse2" class="panel-collapse collapse"> <!-- add 'in' next to collapse to have it expand -->
@@ -102,7 +102,7 @@
     <div class="panel-heading">
       <h4 class="panel-title" style="color:#8f001a">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-        Questions de référence - Reference Questions (aka C)</a>
+        Questions de référence - Reference Questions</a>
       </h4>
     </div>
     <div id="collapse3" class="panel-collapse collapse">
