@@ -19,8 +19,6 @@ Route::get('/training', 'PagesController@getTraining');
 Route::get('/report',   'PagesController@getReport');
 Route::get('/dash',     'PagesController@getDash');
 Route::get('/faq', 'PagesController@getFaq');
-Route::get('/store',    'PagesController@getData');
-ROUTE::get('/clear',    'PagesController@clearCookie');
 //POST
 Route::post('/ondesk', 'PagesController@storeOnDesk');//store: insert into DB
 Route::post('/offdesk', 'PagesController@storeOffDesk');//store: insert into DB

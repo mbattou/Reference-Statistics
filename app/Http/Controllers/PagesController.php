@@ -7,14 +7,14 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 //new imports - Models
-use App\Post; //call the Post model
-use App\Location; //call the Location Model
-use App\Cat; //call the Cat Model
-use App\Presentation; //call the Presentation Model
-use App\User; //call the User Model
+use App\Post;             //call the Post model
+use App\Location;         //call the Location Model
+use App\Cat;              //call the Cat Model
+use App\Presentation;     //call the Presentation Model
+use App\User;             //call the User Model
 use Illuminate\Http\Request;//using Http request
-use DB; //use query builder DB facade
-use Carbon\Carbon; //get current timestamp for query builder whereBetween
+use DB;                   //use query builder DB facade
+use Carbon\Carbon;        //time and date class
 
 class PagesController extends Controller{
 /*
@@ -88,9 +88,6 @@ class PagesController extends Controller{
 
         return view('dash', ['stats_data'=>$stats_data]);
     }
-    public function getData(){
-        return view('post');
-    }
     //to be deleted POST to test form validation
     public function store(Request $request){
         //form validation
@@ -105,6 +102,9 @@ class PagesController extends Controller{
 
         return view('success');
     }
+/*
+*test function
+*/    
     public function getTest(){
         $stats_data = [];
         $total_A = DB::table('posts')->where('category','=', 1)->count();
