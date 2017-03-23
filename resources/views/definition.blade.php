@@ -1,5 +1,5 @@
 <!-- 
-    this is the cats definitions
+    cats definitions page view
     It plays a reminder role to the cats
     inclued/nested in ondesk.blade.php and offdesk.blade.php views
 -->

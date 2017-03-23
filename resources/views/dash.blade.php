@@ -1,3 +1,4 @@
+<!-- dashboard page view for stats that might be of interest to library staff -->
 @extends('main')
 @section('title', 'Dash')
 @section('content')

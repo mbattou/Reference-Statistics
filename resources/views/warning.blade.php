@@ -1,3 +1,7 @@
+<!--
+  warning page view, displayed on forms when no location is set and user
+  tries to go on the form pages
+ -->
 @extends('main')
 @section('title', 'Success')
 @section('content')

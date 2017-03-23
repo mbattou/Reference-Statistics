@@ -1,4 +1,4 @@
-<!-- training, presentation and course view -->
+<!-- training, presentation and course page view -->
 @extends('main')
 @section('title', 'Training')
 @section('content')

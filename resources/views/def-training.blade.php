@@ -1,5 +1,5 @@
 <!-- 
-    this is the training, presentations and courses
+    training page view, presentations and courses
     and fields definitions. It adds some clarification 
     to the forms when needed.
     inclued/nested in training.blade.php view

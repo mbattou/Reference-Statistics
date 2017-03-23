@@ -1,7 +1,7 @@
-<!-- sidebar statistics -->
+<!-- sidebar statistics page view -->
 <!-- 
   stats: last 24 hours statistics 
-  returns the total of categories
+  returns the total for each category
   -->
   @if($stats_data['total_A'] == 0  && $stats_data['total_B'] == 0 && $stats_data['total_C'] == 0)
   <div class="col-md-3 col-md-offset-1" align="center">

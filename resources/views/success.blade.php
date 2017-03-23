@@ -1,3 +1,6 @@
+<!--
+  success page view message for storing data into DB
+ -->
 @extends('main')
 @section('title', 'Success')
 @section('content')

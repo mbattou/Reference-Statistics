@@ -1,3 +1,8 @@
+<!-- 
+    Error message page view, catches exceptions
+    User entering negative or zero values in all the form fields
+    User entering null values in all from fields
+-->
 @extends('main')
 @section('title', 'Error')
 @section('content')

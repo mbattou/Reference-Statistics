@@ -1,3 +1,6 @@
+<!--
+  offdesk page view
+ -->
 @extends('main')
 @section('title', 'Off Desk')
 @section('content')

@@ -1,3 +1,8 @@
+<!-- 
+  Reports page view, still in the dev process
+  Returns statistics according to filter 
+  details and displays stats in table format
+-->
 @extends('main')
 @section('title', 'Report')
 @section('content')

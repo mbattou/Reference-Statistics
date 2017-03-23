@@ -1,3 +1,4 @@
+<!-- faq page view to answer frequently asked questions -->
 @extends('main')
 @section('title', 'FAQ')
 @section('content')

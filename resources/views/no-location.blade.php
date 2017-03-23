@@ -1,5 +1,5 @@
 <!-- 
-    no-location view is displayed when no location
+    no-location page view is displayed when no location
     has been selected - no location cookie set yet! 
     asks the user to return to the home page to do so
 -->

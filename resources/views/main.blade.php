@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- 
-This is the main page that will contain the common layout of the application pages
+main page view that contains the common layout of all the application pages
  -->
 <html lang="en">
   <head>

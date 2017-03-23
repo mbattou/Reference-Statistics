@@ -1,3 +1,8 @@
+<!-- 
+  welcome page view, nested on the home (main) page view
+  takes care of some logic; check the location cookie
+  and render the appropriate view
+-->
 @extends('main')
 @section('title', 'Welcome')
 @section('content')

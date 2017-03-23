@@ -1,3 +1,6 @@
+<!--
+  ondesk page view
+ -->
 @extends('main')
 @section('title', 'On Desk')
 @section('content')
@@ -12,12 +15,10 @@ These values are saves in the $cats variable and passed to both Get and Post vie
 
 <!-- WARNING -->
 <!-- 
-  adding a new cat to the cat table will generate a third submit button automaticaly.
-  if all cats are all active at the same time, then no problem. but it you want to display
-  A, B and the newly added button...say D to make A, B and D instead of A, B and C then you
-  might want to add a new col in cats table to flag the active and non active cats. Otherwise
-  you will end up with A, B, C and D. 
-  another option will be to hard-code the cats as suggested in previous comments.
+  adding a new cat to the cats table will not generate a fourth submit button automaticaly.
+  to unable and disable cats buttons make sure cat status is set to 1 (active) else it 
+  will not be displayed
+ 
 -->
 <h1>Au Comptoir - On Desk</h1>
 

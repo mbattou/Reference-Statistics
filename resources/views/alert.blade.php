@@ -1,3 +1,4 @@
+<!-- alert page viewdisplayed on welcome page after user select a location -->
 @extends('main')
 @section('title', 'Success')
 @section('content')
