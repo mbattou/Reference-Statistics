@@ -18,12 +18,12 @@ Route::get('/offdesk',  'PagesController@getOffdesk');
 Route::get('/training', 'PagesController@getTraining');
 Route::get('/report',   'PagesController@getReport');
 Route::get('/dash',     'PagesController@getDash');
-Route::get('/faq', 'PagesController@getFaq');
+Route::get('/faq', 		'PagesController@getFaq');
 //POST
-Route::post('/ondesk', 'PagesController@storeOnDesk');//store: insert into DB
-Route::post('/offdesk', 'PagesController@storeOffDesk');//store: insert into DB
-Route::post('/training', 'PagesController@storeTraining');//store: insert into DB
-Route::post('/setCookie', 'PagesController@setCookie');//setCookie: sets the cookie
+Route::post('/ondesk', 		'PagesController@storeOnDesk');//store: insert into DB
+Route::post('/offdesk', 	'PagesController@storeOffDesk');//store: insert into DB
+Route::post('/training', 	'PagesController@storeTraining');//store: insert into DB
+Route::post('/setCookie', 	'PagesController@setCookie');//setCookie: sets the cookie
 //testing routes
-Route::get('/test', 'PagesController@getTest');
-Route::post('/store', 'PagesController@store');
+Route::get('/test', 	'PagesController@getTest');
+Route::post('/store', 	'PagesController@store');

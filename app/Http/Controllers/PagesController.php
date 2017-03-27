@@ -21,7 +21,7 @@ class PagesController extends Controller{
 *Get Functions
 */       
     public function getIndex(){
-        $locations = Location::where('id','>=', 1)->orderBy('id', 'asc')->get();
+        $locations = Location::where('status','=', 1)->orderBy('id', 'asc')->get();
         return view('welcome', ['locations'=>$locations]);
     }
     public function getOndesk(){

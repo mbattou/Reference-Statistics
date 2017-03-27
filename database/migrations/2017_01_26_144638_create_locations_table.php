@@ -17,6 +17,7 @@ class CreateLocationsTable extends Migration
             $table->increments('id');       //PK
             $table->string('locationtag');
             $table->string('locationdesc');
+            $table->integer('status');
         });
     }
 
